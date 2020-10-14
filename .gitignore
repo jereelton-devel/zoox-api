@@ -1,0 +1,8 @@
+
+#Ignore Packages - use composer to install
+vendor/slim*
+vendor/jean85*
+vendor/mongodb*
+
+#IDE-Settings
+.idea/workspace.xml
