@@ -17,62 +17,267 @@ $headers = apache_request_headers();
 var_dump($headers);
 echo '</pre>';*/
 
-$app->get('/', function(){
-	echo "<h1>ZOOX-API</h1>";
+//Contar Especifico
+/*$zooxcount = $client->selectDatabase('zoox_mongodb')->selectCollection('zoox_mongodb_collection')->countDocuments(["nome"=>"Rio de Janeiro"]);*/
+
+//Busca
+$app->get('/action/search/:col/:data', function($col, $data) {
 
     $client = new Client(
         'mongodb://localhost:27017'
     );
 
-    //Atualizar
-    /*$zooxupdate = $client->selectDatabase('zoox_mongodb')->selectCollection('zoox_mongodb_collection')->updateOne(["id"=>1],['$set'=>["nome"=>"Amazonas"]]);
+    $arrayDocs = [];
 
-    echo $zooxupdate->getModifiedCount();*/
+    $zooxlistNome = $client
+        ->selectDatabase('zoox_mongodb')
+        ->selectCollection('zoox_mongodb_collection_'.$col)
+        ->find(["nome" => "{$data}"]);
 
+    $zooxlistSigla = $client
+        ->selectDatabase('zoox_mongodb')
+        ->selectCollection('zoox_mongodb_collection_'.$col)
+        ->find(["sigla"=>"{$data}"]);
 
-    //Contar Especifico
-    $zooxcount = $client->selectDatabase('zoox_mongodb')->selectCollection('zoox_mongodb_collection')->countDocuments(["nome"=>"Rio de Janeiro"]);
-    //Contar Todos
-    $zooxcount = $client->selectDatabase('zoox_mongodb')->selectCollection('zoox_mongodb_collection')->countDocuments();
+    foreach ($zooxlistNome as $document) {
 
-    //Listar
-    $zooxlist = $client->selectDatabase('zoox_mongodb')->selectCollection('zoox_mongodb_collection')->find();
-
-    echo $zooxcount;
-
-    echo '<pre>';
-    foreach ($zooxlist as $document) {
-        echo $document["id"] .' - '. $document["nome"] . "\n";
+        $arrayDocs[] = [
+            "id" => $document["id"],
+            "nome" => $document["nome"],
+            "sigla" => $document["sigla"],
+            "data_criacao" => $document["data_criacao"],
+            "data_atualizacao" => $document["data_atualizacao"]
+        ];
     }
-    echo '</pre>';
 
+    foreach ($zooxlistSigla as $document) {
 
+        $arrayDocs[] = [
+            "id" => $document["id"],
+            "nome" => $document["nome"],
+            "sigla" => $document["sigla"],
+            "data_criacao" => $document["data_criacao"],
+            "data_atualizacao" => $document["data_atualizacao"]
+        ];
+    }
 
-    //Inserir
-    /*$zoox = $client->selectDatabase('zoox_mongodb')->selectCollection('zoox_mongodb_collection')->insertOne(["id"=>3,"nome"=>"Rio de Janeiro","sigla"=>"RJ","data_criacao"=>"10/10/2020","data_atualizacao"=>"14/10/2020"]);*/
+    if(count($arrayDocs) > 0) {
 
+        echo json_encode($arrayDocs);
 
+    } else {
 
-    //Remover
-    //$zoox = $client->selectDatabase('zoox_mongodb')->selectCollection('zoox_mongodb_collection')->deleteOne(["id"=>4]);
+        echo json_encode(['msgError' => 'Não foi possivel ordenar a lista']);
 
-
-
-    /*echo '<pre>';
-    var_dump($zoox);
-    echo '</pre>';
-
-    echo '<pre>';
-    var_dump($data);
-    echo '</pre>';*/
+    }
 
 });
 
-//$app->post();
+//Listar
+$app->get('/action/list/:col', function($col) {
 
-//$app->put();
+    $client = new Client(
+        'mongodb://localhost:27017'
+    );
 
-//$app->delete();
+    $zooxcount = $client
+        ->selectDatabase('zoox_mongodb')
+        ->selectCollection('zoox_mongodb_collection_'.$col)
+        ->countDocuments();
+
+    if($zooxcount > 0) {
+
+        $zooxlist = $client
+            ->selectDatabase('zoox_mongodb')
+            ->selectCollection('zoox_mongodb_collection_'.$col)
+            ->find();
+
+        foreach ($zooxlist as $document) {
+
+            $arrayDocs[] = [
+                "id" => $document["id"],
+                "nome" => $document["nome"],
+                "sigla" => $document["sigla"],
+                "data_criacao" => $document["data_criacao"],
+                "data_atualizacao" => $document["data_atualizacao"]
+            ];
+
+        }
+
+        echo json_encode($arrayDocs);
+
+    } else {
+
+        echo json_encode(['msgError' => 'Nenhum registro encontrado']);
+
+    }
+
+});
+
+//Listagem Especifica
+$app->get('/action/listone/:col/:data', function($col, $data) {
+
+    $client = new Client(
+        'mongodb://localhost:27017'
+    );
+
+    $zooxcount = $client
+        ->selectDatabase('zoox_mongodb')
+        ->selectCollection('zoox_mongodb_collection_'.$col)
+        ->countDocuments(["id"=>intval($data)]);
+
+    if($zooxcount > 0) {
+
+        $zooxlist = $client
+            ->selectDatabase('zoox_mongodb')
+            ->selectCollection('zoox_mongodb_collection_' . $col)
+            ->findOne(["id" => intval($data)]);
+
+        $arrayDocs[] = [
+            "id" => $zooxlist["id"],
+            "nome" => $zooxlist["nome"],
+            "sigla" => $zooxlist["sigla"],
+            "data_criacao" => $zooxlist["data_criacao"],
+            "data_atualizacao" => $zooxlist["data_atualizacao"]
+        ];
+
+        echo json_encode($arrayDocs);
+
+    } else {
+
+        echo json_encode(['msgError' => 'Registro não encontrado']);
+    }
+
+});
+
+//Listagem ordenada
+$app->get('/action/listorder/:col/:data', function($col, $data) {
+
+    $client = new Client(
+        'mongodb://localhost:27017'
+    );
+
+    $zooxlist = $client
+        ->selectDatabase('zoox_mongodb')
+        ->selectCollection('zoox_mongodb_collection_'.$col)
+        ->find([],['sort'=>["{$data}" => 1]]);
+
+    foreach ($zooxlist as $document) {
+
+        $arrayDocs[] = [
+            "id" => $document["id"],
+            "nome" => $document["nome"],
+            "sigla" => $document["sigla"],
+            "data_criacao" => $document["data_criacao"],
+            "data_atualizacao" => $document["data_atualizacao"]
+        ];
+    }
+
+    if(count($arrayDocs) > 0) {
+
+        echo json_encode($arrayDocs);
+
+    } else {
+
+        echo json_encode(['msgError' => 'Não foi possivel ordenar a lista']);
+
+    }
+
+});
+
+//Inserir
+$app->post('/action/insert/:col/:data1/:data2', function($col, $data1, $data2) {
+
+    $client = new Client(
+        'mongodb://localhost:27017'
+    );
+
+    $zooxinsert = $client
+        ->selectDatabase('zoox_mongodb')
+        ->selectCollection('zoox_mongodb_collection_'.$col)
+        ->insertOne(
+            [
+                "id"=>$client
+                    ->selectDatabase('zoox_mongodb')
+                    ->selectCollection('zoox_mongodb_collection_'.$col)
+                    ->estimatedDocumentCount([]) + 1,
+                "nome"=>"{$data1}",
+                "sigla"=>"{$data2}",
+                "data_criacao"=>date("d/m/Y"),
+                "data_atualizacao"=>""
+            ]);
+
+    if($zooxinsert->getInsertedCount() > 0) {
+
+        echo json_encode(['msgSuccess' => 'Documento inserido com sucesso']);
+
+    } else {
+
+        echo json_encode(['msgError' => 'Não foi possivel inserir o documento']);
+
+    }
+
+});
+
+//Atualizar
+$app->post('/action/update/:col/:data/:data1/:data2', function($col, $data, $data1, $data2) {
+
+    $client = new Client(
+        'mongodb://localhost:27017'
+    );
+
+    $zooxupdate = $client
+        ->selectDatabase('zoox_mongodb')
+        ->selectCollection('zoox_mongodb_collection_'.$col)
+        ->updateOne(
+            ["id"=>intval($data)],
+            ['$set'=>
+                [
+                    "nome"=>"{$data1}",
+                    "sigla"=>"{$data2}",
+                    "data_atualizacao"=>date("d/m/Y")
+                ]
+            ]);
+
+    if($zooxupdate->getModifiedCount() > 0 || $zooxupdate->getMatchedCount()) {
+
+        echo json_encode(['msgSuccess' => 'Documento atualizado com sucesso']);
+
+    } else {
+
+        echo json_encode(['msgError' => 'Não foi possivel atualizar o documento']);
+
+    }
+
+});
+
+//Remover
+$app->post('/action/delete/:col/:data', function($col, $data) {
+
+    $client = new Client(
+        'mongodb://localhost:27017'
+    );
+
+    $zooxdelete = $client
+        ->selectDatabase('zoox_mongodb')
+        ->selectCollection('zoox_mongodb_collection_'.$col)
+        ->deleteOne(["id"=>intval($data)]);
+
+    if($zooxdelete->getDeletedCount()) {
+
+        echo json_encode(['msgSuccess' => 'Documento apagado com sucesso']);
+
+    } else {
+
+        echo json_encode(['msgError' => 'Não foi possivel apagar o documento']);
+
+    }
+
+});
+
+$app->get('/', function() {//Welcome
+    echo "<h1>ZOOX-API-LOCAL::Acesso Restrito</h1>";
+});
 
 $app->run();
 
