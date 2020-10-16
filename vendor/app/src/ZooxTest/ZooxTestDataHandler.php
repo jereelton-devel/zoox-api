@@ -46,6 +46,8 @@ class ZooxTestDataHandler
 
     public function dataUpdate($data, $data1, $data2)
     {
+        $data2 = strtoupper($data2);
+
         $zooxupdate = $this->cursor->updateOne(
                 ["id"=>intval($data)],
                 ['$set'=>
@@ -69,6 +71,8 @@ class ZooxTestDataHandler
 
     public function dataInsert($data1, $data2)
     {
+        $data2 = strtoupper($data2);
+
         $zooxinsert = $this->cursor->insertOne(
                 [
                     "id"=>$this->defineNextDocumentId("id"),
