@@ -11,6 +11,10 @@
 
 > NOTE: This project and app was tested on Windows environment
 
+> NOTE: Use URL-Encode to send a request for api zoox-api: urlencode (PHP)
+
+> NOTE: This project is part of the zoox project and must be used together with the zoox-test. 
+
 # Configure Apache Server - XAMPP
 C:\webserver\xampp-php7.4.8\apache\conf\extra\httpd-vhosts.conf
 
@@ -189,5 +193,3 @@ After app authentication the api request your token to check your identiry corre
 * {id: 2, app: "zoox.test.local", token: "MTIzNDU2Nzg5MA==", timelife: 1}
 
 On both cases you should be send the token in the request header with name <strong>x-Api-key</strong> 
-
-> NOTE: This project is part of the zoox project and must be used together with the zoox-test. 
