@@ -143,9 +143,9 @@ C:\Windows\System32\drivers\etc\hosts
 
 - Data Search:
 > <strong>GET</strong><br />
-> zoox.api.local/action/search/:col/:data
+> zoox.api.local/action/search/:col/:data/:type
 > <br /><strong>Sample:</strong><br />
-> http://zoox.api.local/action/search/cidade/SP
+> http://zoox.api.local/action/search/cidade/SP/asc
 
 - Data List
 > <strong>GET</strong><br />

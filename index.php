@@ -42,8 +42,8 @@ $controllAccess = function() {
     global $checkAuthorization;
 
     $headers = apache_request_headers();
-    $hostApi = (isset($headers['Host']) && $headers['Host'] != "") ? $headers['Host'] : '';
-    $referer = (isset($headers['Referer']) && $headers['Referer'] != "") ? $headers['Referer'] : '';
+    $hostApi = (isset($headers['Host']) && $headers['Host'] != "") ? $headers['Host'] : ''; //GET
+    $referer = (isset($headers['Referer']) && $headers['Referer'] != "") ? $headers['Referer'] : ''; //GET
     $origin  = (isset($headers['Origin']) && $headers['Origin'] != "") ? $headers['Origin'] : '';
     $xClient = (isset($headers['x-Client-Origin']) && $headers['x-Client-Origin'] != "") ? $headers['x-Client-Origin'] : '';
     $xApiKey = (isset($headers['x-Api-key']) && $headers['x-Api-key'] != "") ? $headers['x-Api-key'] : '';
@@ -113,11 +113,11 @@ $app->get('/action/listone/:col/:data', $controllAccess, function($col, $data) {
 
 });
 
-//Listagem ordenada - http://zoox.api.local/action/listorder/cidade/nome (Exemplo)
-$app->get('/action/listorder/:col/:data', $controllAccess, function($col, $data) {
+//Listagem ordenada - http://zoox.api.local/action/listorder/cidade/nome/asc (Exemplo)
+$app->get('/action/listorder/:col/:data/:type', $controllAccess, function($col, $data, $type) {
 
     $search = new ZooxTestDataHandler($col);
-    $response = $search->dataListOrder($data);
+    $response = $search->dataListOrder($data, $type);
 
     $logger = new ZooxTestLogger();
     $logger->dataLogInsert(json_encode(["action"=>"ListOrder", "data"=>"$response"]));

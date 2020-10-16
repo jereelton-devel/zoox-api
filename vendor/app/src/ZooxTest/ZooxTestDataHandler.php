@@ -73,6 +73,14 @@ class ZooxTestDataHandler
     {
         $data2 = strtoupper($data2);
 
+        if(strlen($data1) <= 3) {
+            return json_encode(['msgError' => 'Nome Inválido'], JSON_UNESCAPED_UNICODE);
+        }
+
+        if(strlen($data2) != 2) {
+            return json_encode(['msgError' => 'Sigla Inválida'], JSON_UNESCAPED_UNICODE);
+        }
+
         $zooxinsert = $this->cursor->insertOne(
                 [
                     "id"=>$this->defineNextDocumentId("id"),
@@ -93,9 +101,17 @@ class ZooxTestDataHandler
         }
     }
 
-    public function dataListOrder($data)
+    public function dataListOrder($data, $type)
     {
-        $zooxlist = $this->cursor->find([],['sort'=>["{$data}" => 1]]); //Ascendente
+        if($type == 'asc') {
+            $type = 1;
+        }
+
+        if($type == 'desc') {
+            $type = -1;
+        }
+
+        $zooxlist = $this->cursor->find([],['sort'=>["{$data}" => $type]]);
 
         foreach ($zooxlist as $document) {
 
