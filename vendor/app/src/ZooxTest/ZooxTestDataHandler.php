@@ -4,8 +4,8 @@ namespace ZooxTest;
 
 class ZooxTestDataHandler
 {
+    private $cursor;
     private $client;
-    private $collection;
     private $arrayDocs;
     private $dateCurrent;
     private $currentIndex;
@@ -20,10 +20,7 @@ class ZooxTestDataHandler
 
     private function defineNextDocumentId($index)
     {
-        $zooxlist = $this->client
-            ->selectDatabase('zoox_mongodb')
-            ->selectCollection('zoox_mongodb_collection_'.$this->collection)
-            ->find([],['limit'=>1,'sort'=>["{$index}" => -1]]); //Ascendente
+        $zooxlist = $this->cursor->find([],['limit'=>1,'sort'=>["{$index}" => -1]]); //Ascendente
 
         foreach ($zooxlist as $document) {
             $this->currentIndex = $document["id"];
@@ -34,10 +31,7 @@ class ZooxTestDataHandler
 
     public function dataDelete($data)
     {
-        $zooxdelete = $this->client
-            ->selectDatabase('zoox_mongodb')
-            ->selectCollection('zoox_mongodb_collection_'.$this->collection)
-            ->deleteOne(["id"=>intval($data)]);
+        $zooxdelete = $this->cursor->deleteOne(["id"=>intval($data)]);
 
         if($zooxdelete->getDeletedCount()) {
 
@@ -52,10 +46,7 @@ class ZooxTestDataHandler
 
     public function dataUpdate($data, $data1, $data2)
     {
-        $zooxupdate = $this->client
-            ->selectDatabase('zoox_mongodb')
-            ->selectCollection('zoox_mongodb_collection_'.$this->collection)
-            ->updateOne(
+        $zooxupdate = $this->cursor->updateOne(
                 ["id"=>intval($data)],
                 ['$set'=>
                     [
@@ -78,10 +69,7 @@ class ZooxTestDataHandler
 
     public function dataInsert($data1, $data2)
     {
-        $zooxinsert = $this->client
-            ->selectDatabase('zoox_mongodb')
-            ->selectCollection('zoox_mongodb_collection_'.$this->collection)
-            ->insertOne(
+        $zooxinsert = $this->cursor->insertOne(
                 [
                     "id"=>$this->defineNextDocumentId("id"),
                     "nome"=>"{$data1}",
@@ -103,10 +91,7 @@ class ZooxTestDataHandler
 
     public function dataListOrder($data)
     {
-        $zooxlist = $this->client
-            ->selectDatabase('zoox_mongodb')
-            ->selectCollection('zoox_mongodb_collection_'.$this->collection)
-            ->find([],['sort'=>["{$data}" => 1]]); //Ascendente
+        $zooxlist = $this->cursor->find([],['sort'=>["{$data}" => 1]]); //Ascendente
 
         foreach ($zooxlist as $document) {
 
@@ -132,17 +117,11 @@ class ZooxTestDataHandler
 
     public function dataListOne($data)
     {
-        $zooxcount = $this->client
-            ->selectDatabase('zoox_mongodb')
-            ->selectCollection('zoox_mongodb_collection_'.$this->collection)
-            ->countDocuments(["id"=>intval($data)]);
+        $zooxcount = $this->cursor->countDocuments(["id"=>intval($data)]);
 
         if($zooxcount > 0) {
 
-            $zooxlist = $this->client
-                ->selectDatabase('zoox_mongodb')
-                ->selectCollection('zoox_mongodb_collection_' . $this->collection)
-                ->findOne(["id" => intval($data)]);
+            $zooxlist = $this->cursor->findOne(["id" => intval($data)]);
 
             $this->arrayDocs[] = [
                 "id" => $zooxlist["id"],
@@ -162,17 +141,11 @@ class ZooxTestDataHandler
 
     public function dataList()
     {
-        $zooxcount = $this->client
-            ->selectDatabase('zoox_mongodb')
-            ->selectCollection('zoox_mongodb_collection_'.$this->collection)
-            ->countDocuments();
+        $zooxcount = $this->cursor->countDocuments();
 
         if($zooxcount > 0) {
 
-            $zooxlist = $this->client
-                ->selectDatabase('zoox_mongodb')
-                ->selectCollection('zoox_mongodb_collection_'.$this->collection)
-                ->find();
+            $zooxlist = $this->cursor->find();
 
             foreach ($zooxlist as $document) {
 
@@ -197,15 +170,9 @@ class ZooxTestDataHandler
 
     public function dataSearch($data)
     {
-        $zooxlistNome = $this->client
-            ->selectDatabase('zoox_mongodb')
-            ->selectCollection('zoox_mongodb_collection_'.$this->collection)
-            ->find(["nome" => "{$data}"]);
+        $zooxlistNome = $this->cursor->find(["nome" => "{$data}"]);
 
-        $zooxlistSigla = $this->client
-            ->selectDatabase('zoox_mongodb')
-            ->selectCollection('zoox_mongodb_collection_'.$this->collection)
-            ->find(["sigla"=>"{$data}"]);
+        $zooxlistSigla = $this->cursor->find(["sigla"=>"{$data}"]);
 
         foreach ($zooxlistNome as $document) {
 
@@ -246,7 +213,9 @@ class ZooxTestDataHandler
             'mongodb://localhost:27017'
         );
 
-        $this->collection = $col;
+        $this->cursor = $this->client
+            ->selectDatabase('zoox_mongodb')
+            ->selectCollection('zoox_mongodb_collection_'.$col);
     }
     
 }

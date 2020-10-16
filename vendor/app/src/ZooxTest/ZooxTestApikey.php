@@ -4,23 +4,16 @@ namespace ZooxTest;
 
 class ZooxTestApikey
 {
+    private $cursor;
     private $client;
-    private $collection;
-    private $arrayDocs;
 
     public function findApiKey($app, $token)
     {
-        $zooxcount = $this->client
-            ->selectDatabase('zoox_mongodb')
-            ->selectCollection('zoox_mongodb_collection_'.$this->collection)
-            ->countDocuments(["app"=>$app]);
+        $zooxcount = $this->cursor->countDocuments(["app"=>$app]);
 
         if($zooxcount > 0) {
 
-            $zooxlist = $this->client
-                ->selectDatabase('zoox_mongodb')
-                ->selectCollection('zoox_mongodb_collection_' . $this->collection)
-                ->findOne(["app"=>$app]);
+            $zooxlist = $this->cursor->findOne(["app"=>$app]);
 
             if($zooxlist["app"] == $app && $zooxlist["token"] == $token && $zooxlist["timelife"] == 1) {
                 return true;
@@ -40,7 +33,9 @@ class ZooxTestApikey
             'mongodb://localhost:27017'
         );
 
-        $this->collection = "apikey";
+        $this->cursor = $this->client
+            ->selectDatabase('zoox_mongodb')
+            ->selectCollection('zoox_mongodb_collection_apikey');
 
     }
 

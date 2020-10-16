@@ -4,16 +4,13 @@ namespace ZooxTest;
 
 class ZooxTestLogger
 {
+    private $cursor;
     private $client;
-    private $collection;
     private $currentIndex;
 
     private function defineNextDocumentId($index)
     {
-        $zooxlist = $this->client
-            ->selectDatabase('zoox_mongodb')
-            ->selectCollection('zoox_mongodb_collection_'.$this->collection)
-            ->find([],['limit'=>1,'sort'=>["{$index}" => -1]]); //Ascendente
+        $zooxlist = $this->cursor->find([],['limit'=>1,'sort'=>["{$index}" => -1]]);
 
         foreach ($zooxlist as $document) {
             $this->currentIndex = $document["id"];
@@ -24,10 +21,7 @@ class ZooxTestLogger
 
     public function dataLogInsert($data)
     {
-        $zooxinsertlog = $this->client
-            ->selectDatabase('zoox_mongodb')
-            ->selectCollection('zoox_mongodb_collection_'.$this->collection)
-            ->insertOne(
+        $zooxinsertlog = $this->cursor->insertOne(
                 [
                     "id"=>$this->defineNextDocumentId("id"),
                     "logdetail"=>"{$data}"
@@ -50,7 +44,9 @@ class ZooxTestLogger
             'mongodb://localhost:27017'
         );
 
-        $this->collection = "log";
+        $this->cursor = $this->client
+            ->selectDatabase('zoox_mongodb')
+            ->selectCollection('zoox_mongodb_collection_log');
 
     }
 

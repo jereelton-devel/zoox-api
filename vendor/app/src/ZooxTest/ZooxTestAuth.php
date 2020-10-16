@@ -4,15 +4,12 @@ namespace ZooxTest;
 
 class ZooxTestAuth
 {
+    private $cursor;
     private $client;
-    private $collection;
 
     public function findAppAuth($app)
     {
-        $zooxcount = $this->client
-            ->selectDatabase('zoox_mongodb')
-            ->selectCollection('zoox_mongodb_collection_'.$this->collection)
-            ->countDocuments(["app"=>$app]);
+        $zooxcount = $this->cursor->countDocuments(["app"=>$app]);
 
         if($zooxcount > 0) {
 
@@ -30,7 +27,9 @@ class ZooxTestAuth
             'mongodb://localhost:27017'
         );
 
-        $this->collection = "auth";
+        $this->cursor = $this->client
+            ->selectDatabase('zoox_mongodb')
+            ->selectCollection('zoox_mongodb_collection_auth');
 
     }
 
