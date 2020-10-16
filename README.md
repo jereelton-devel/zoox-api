@@ -1,8 +1,8 @@
-#zoox-test
+# zoox-test
 
-#HOW TO MAKE THE INSTALATION AND TEST
+# HOW TO MAKE THE INSTALATION AND TEST
 
-#Requirements
+# Requirements
 - PHP 7.4
 - XAMPP v3.2.4
 - MongoDB 4.4.1
@@ -11,7 +11,7 @@
 
 > NOTE: This project and app was tested on Windows environment
 
-#Configure Apache Server - XAMPP
+# Configure Apache Server - XAMPP
 C:\webserver\xampp-php7.4.8\apache\conf\extra\httpd-vhosts.conf
 
 - API
@@ -83,7 +83,7 @@ C:\webserver\xampp-php7.4.8\apache\conf\extra\httpd-vhosts.conf
 </VirtualHost>
 </pre>
 
-#Configure hosts file
+# Configure hosts file
 
 C:\Windows\System32\drivers\etc\hosts
 
@@ -115,22 +115,22 @@ C:\Windows\System32\drivers\etc\hosts
 	127.0.0.1       zoox.denied.local
 </pre>
 
-#Restart your webserver
+# Restart your webserver
 - XAMPP::Controll (by example)
 
-#Import the MongoDB databases that are placed on zoox-api/db in this project
+# Import the MongoDB databases that are placed on zoox-api/db in this project
 - zoox_mongodb_collection_apikey.json
 - zoox_mongodb_collection_auth.json
 - zoox_mongodb_collection_cidade.json
 - zoox_mongodb_collection_estado.json
 - zoox_mongodb_collection_log.json
 
-#IMPORTANT:
+# IMPORTANT:
 >Put the files files zoox-test on your localhost root path, so access the app by http://zoox.test.local/zoox-dash.php.
 
 >The API should be defined with the correct local dns name for the correct funcionally this test, by example: http://zoox.api.local
 
-#Requests
+# Requests
 
 > NOTE !<br />
 (:col) = collection and (:data) = data
@@ -178,12 +178,12 @@ C:\Windows\System32\drivers\etc\hosts
 > http://zoox.api.local/action/delete/cidade/9
 >
 
-#Authentication
+# Authentication
 The app authentication is make in the collection database zoox_mongodb_collection_auth, so you should be register your app in the collection database, example:
 * {id: 1, app: zoox.test.local}
 * {id: 2, app: zoox.api.local}
 
-#Authorization
+# Authorization
 After app authentication the api request your token to check your identiry correctly in the collection zoox_mongodb_collection_apikey, so you need register or create a token of access this api, example:
 * {id: 1, app: "zoox.test.local", token: "MTIzNDU2Nzg5MA==", timelife: 1}
 * {id: 2, app: "zoox.test.local", token: "MTIzNDU2Nzg5MA==", timelife: 1}
