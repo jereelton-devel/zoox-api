@@ -42,19 +42,25 @@ $controllAccess = function() {
     global $checkAuthorization;
 
     $headers = apache_request_headers();
+    $hostApi = (isset($headers['Host']) && $headers['Host'] != "") ? $headers['Host'] : '';
+    $referer = (isset($headers['Referer']) && $headers['Referer'] != "") ? $headers['Referer'] : '';
     $origin  = (isset($headers['Origin']) && $headers['Origin'] != "") ? $headers['Origin'] : '';
-    $host    = (isset($headers['Host']) && $headers['Host'] != "") ? $headers['Host'] : '';
+    $xClient = (isset($headers['x-Client-Origin']) && $headers['x-Client-Origin'] != "") ? $headers['x-Client-Origin'] : '';
     $xApiKey = (isset($headers['x-Api-key']) && $headers['x-Api-key'] != "") ? $headers['x-Api-key'] : '';
 
-    if($xApiKey == "" || $origin == "") {
+    if($xApiKey == "" || ($hostApi == "" && $referer == "" && $origin == "" && $xClient == "")) {
         echo "<h1>ZOOX-API-LOCAL::Acesso Restrito</h1>";
         die;
     }
 
-    if($origin != "") {
-        $appAuth = $origin;
-    } elseif($host != "") {
-        $appAuth = $host;
+    if($xClient != "") {
+        $appAuth = $xClient; $method = "x-Client-Origin";
+    } elseif($origin != "") {
+        $appAuth = $origin; $method = "Origin";
+    } elseif($referer != "") {
+        $appAuth = $referer; $method = "Referer";
+    } elseif($hostApi != "") {
+        $appAuth = $hostApi; $method = "Host";
     } else {
         echo false;
         die;
@@ -64,7 +70,7 @@ $controllAccess = function() {
     $checkAuthorization($appAuth, $xApiKey);
 
     $logger = new ZooxTestLogger();
-    $logger->dataLogInsert(json_encode(["action"=>"ControllAccess", "data"=>"$appAuth Autenticada e Autorizada"]));
+    $logger->dataLogInsert(json_encode(["action"=>"ControllAccess", "client"=>"Header[$method]", "data"=>"$appAuth Autenticada e Autorizada"]));
 
 };
 

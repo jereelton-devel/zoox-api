@@ -174,9 +174,13 @@ class ZooxTestDataHandler
 
     public function dataSearch($data)
     {
-        $zooxlistNome = $this->cursor->find(["nome" => "{$data}"]);
+        $zooxlistNome = $this->cursor->find([
+            "nome" => new \MongoDB\BSON\Regex("{$data}", 'i')
+        ]);
 
-        $zooxlistSigla = $this->cursor->find(["sigla"=>"{$data}"]);
+        $zooxlistSigla = $this->cursor->find([
+            "sigla" => new \MongoDB\BSON\Regex("{$data}", 'i')
+        ]);
 
         foreach ($zooxlistNome as $document) {
 

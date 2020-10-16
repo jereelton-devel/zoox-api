@@ -1,6 +1,6 @@
-# zoox-test
+# zoox-challege
 
-# HOW TO MAKE THE INSTALATION AND TEST
+# How do make the install and test
 
 # Requirements
 - PHP 7.4
@@ -13,7 +13,7 @@
 
 > NOTE: Use URL-Encode to send a request for api zoox-api: urlencode (PHP)
 
-> NOTE: This project is part of the zoox project and must be used together with the zoox-test. 
+> NOTE: This project is part of the zoox project and must be used together with the <h1>zoox-test</h1>. 
 
 # Configure Apache Server - XAMPP
 C:\webserver\xampp-php7.4.8\apache\conf\extra\httpd-vhosts.conf
@@ -134,6 +134,8 @@ C:\Windows\System32\drivers\etc\hosts
 
 >The API should be defined with the correct local dns name for the correct funcionally this test, by example: http://zoox.api.local
 
+> You can too put the files in the localhost (http://localhost/zoox-test) webserver, but will be needed register the application into database correctly.
+
 # Requests
 
 > NOTE !<br />
@@ -192,4 +194,4 @@ After app authentication the api request your token to check your identiry corre
 * {id: 1, app: "zoox.test.local", token: "MTIzNDU2Nzg5MA==", timelife: 1}
 * {id: 2, app: "zoox.test.local", token: "MTIzNDU2Nzg5MA==", timelife: 1}
 
-On both cases you should be send the token in the request header with name <strong>x-Api-key</strong> 
+On both cases you should be send the token in the request header with name <strong>x-Api-key</strong> and client name <strong>x-Client-Origin</strong>.
