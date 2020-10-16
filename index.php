@@ -46,9 +46,10 @@ $controllAccess = function() {
     $host    = (isset($headers['Host']) && $headers['Host'] != "") ? $headers['Host'] : '';
     $xApiKey = (isset($headers['x-Api-key']) && $headers['x-Api-key'] != "") ? $headers['x-Api-key'] : '';
 
-    /*echo '<pre>';
-    var_dump($headers, $origin, $host, $xApiKey);
-    echo '</pre>';*/
+    if($xApiKey == "" || $origin == "") {
+        echo "<h1>ZOOX-API-LOCAL::Acesso Restrito</h1>";
+        die;
+    }
 
     if($origin != "") {
         $appAuth = $origin;
@@ -56,11 +57,6 @@ $controllAccess = function() {
         $appAuth = $host;
     } else {
         echo false;
-        die;
-    }
-
-    if($xApiKey == "") {
-        echo "<h1>ZOOX-API-LOCAL::Acesso Restrito</h1>";
         die;
     }
 
