@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "5f8712ce75460000f1006e98"
+  },
+  "id": 1,
+  "nome": "Amazonas",
+  "sigla": "AM",
+  "data_criacao": "10/10/2020",
+  "data_atualizacao": "14/10/2020"
+},{
+  "_id": {
+    "$oid": "5f87133175460000f1006e99"
+  },
+  "id": 2,
+  "nome": "São Paulo",
+  "sigla": "SP",
+  "data_criacao": "10/10/2020",
+  "data_atualizacao": "14/10/2020"
+},{
+  "_id": {
+    "$oid": "5f871afe75460000f1006e9a"
+  },
+  "id": 3,
+  "nome": "Rio de Janeiro",
+  "sigla": "RJ",
+  "data_criacao": "10/10/2020",
+  "data_atualizacao": "14/10/2020"
+}]

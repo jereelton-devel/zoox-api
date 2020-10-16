@@ -1,0 +1,379 @@
+[{
+  "_id": {
+    "$oid": "5f884c849e710000f400562f"
+  },
+  "id": 1,
+  "logdetail": "{\"action\":\"Search\",\"data\":\"SP\"}"
+},{
+  "_id": {
+    "$oid": "5f884e889e710000f4005630"
+  },
+  "id": 2,
+  "logdetail": "{\"action\":\"Search\",\"data\":\"[{\\\"id\\\":1,\\\"nome\\\":\\\"Taubate\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":2,\\\"nome\\\":\\\"Sorocaba\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":7,\\\"nome\\\":\\\"Alphaville\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":11,\\\"nome\\\":\\\"Caraguatatuba\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":24,\\\"nome\\\":\\\"Novidade\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:10:15\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":27,\\\"nome\\\":\\\"NovoTeste111\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:44:28\\\",\\\"data_atualizacao\\\":\\\"\\\"}]\"}"
+},{
+  "_id": {
+    "$oid": "5f884f239e710000f4005631"
+  },
+  "id": 3,
+  "logdetail": "{\"action\":\"Search\",\"data\":\"[{\\\"id\\\":1,\\\"nome\\\":\\\"Taubate\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":2,\\\"nome\\\":\\\"Sorocaba\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":7,\\\"nome\\\":\\\"Alphaville\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":11,\\\"nome\\\":\\\"Caraguatatuba\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":24,\\\"nome\\\":\\\"Novidade\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:10:15\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":27,\\\"nome\\\":\\\"NovoTeste111\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:44:28\\\",\\\"data_atualizacao\\\":\\\"\\\"}]\"}"
+},{
+  "_id": {
+    "$oid": "5f884f2e9e710000f4005632"
+  },
+  "id": 4,
+  "logdetail": "{\"action\":\"Search\",\"data\":\"[{\\\"id\\\":1,\\\"nome\\\":\\\"Taubate\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":2,\\\"nome\\\":\\\"Sorocaba\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":7,\\\"nome\\\":\\\"Alphaville\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":11,\\\"nome\\\":\\\"Caraguatatuba\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":24,\\\"nome\\\":\\\"Novidade\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:10:15\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":27,\\\"nome\\\":\\\"NovoTeste111\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:44:28\\\",\\\"data_atualizacao\\\":\\\"\\\"}]\"}"
+},{
+  "_id": {
+    "$oid": "5f884f3f9e710000f4005633"
+  },
+  "id": 5,
+  "logdetail": "{\"action\":\"Search\",\"data\":\"[{\\\"id\\\":1,\\\"nome\\\":\\\"Taubate\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":2,\\\"nome\\\":\\\"Sorocaba\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":7,\\\"nome\\\":\\\"Alphaville\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":11,\\\"nome\\\":\\\"Caraguatatuba\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":24,\\\"nome\\\":\\\"Novidade\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:10:15\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":27,\\\"nome\\\":\\\"NovoTeste111\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:44:28\\\",\\\"data_atualizacao\\\":\\\"\\\"}]\"}"
+},{
+  "_id": {
+    "$oid": "5f88542c9e710000f4005634"
+  },
+  "id": 6,
+  "logdetail": "{\"action\":\"List\",\"data\":\"[{\\\"id\\\":1,\\\"nome\\\":\\\"Taubate\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":2,\\\"nome\\\":\\\"Sorocaba\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":3,\\\"nome\\\":\\\"Rio de Janeiro\\\",\\\"sigla\\\":\\\"RJ\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":4,\\\"nome\\\":\\\"Campo Grande\\\",\\\"sigla\\\":\\\"MS\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":5,\\\"nome\\\":\\\"Ubatuba\\\",\\\"sigla\\\":\\\"RJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":6,\\\"nome\\\":\\\"Santa Catarina\\\",\\\"sigla\\\":\\\"PR\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":7,\\\"nome\\\":\\\"Alphaville\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":11,\\\"nome\\\":\\\"Caraguatatuba\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":10,\\\"nome\\\":\\\"CidadeNova\\\",\\\"sigla\\\":\\\"RJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:00:56\\\"},{\\\"id\\\":10,\\\"nome\\\":\\\"TesteCidade1\\\",\\\"sigla\\\":\\\"XX\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 08:59:30\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":11,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:16\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":12,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:35\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":13,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:42\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":14,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:42\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":15,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:42\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":16,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":17,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":19,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":21,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":22,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":23,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:44\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":26,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:44\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":24,\\\"nome\\\":\\\"Novidade\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:10:15\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":27,\\\"nome\\\":\\\"NovoTeste111\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:44:28\\\",\\\"data_atualizacao\\\":\\\"\\\"}]\"}"
+},{
+  "_id": {
+    "$oid": "5f88544b9e710000f4005635"
+  },
+  "id": 7,
+  "logdetail": "{\"action\":\"ListOne\",\"data\":\"[{\\\"id\\\":1,\\\"nome\\\":\\\"Taubate\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"}]\"}"
+},{
+  "_id": {
+    "$oid": "5f88545b9e710000f4005636"
+  },
+  "id": 8,
+  "logdetail": "{\"action\":\"ListOrder\",\"data\":\"[{\\\"id\\\":7,\\\"nome\\\":\\\"Alphaville\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":4,\\\"nome\\\":\\\"Campo Grande\\\",\\\"sigla\\\":\\\"MS\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":11,\\\"nome\\\":\\\"Caraguatatuba\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":10,\\\"nome\\\":\\\"CidadeNova\\\",\\\"sigla\\\":\\\"RJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:00:56\\\"},{\\\"id\\\":24,\\\"nome\\\":\\\"Novidade\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:10:15\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":27,\\\"nome\\\":\\\"NovoTeste111\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:44:28\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":3,\\\"nome\\\":\\\"Rio de Janeiro\\\",\\\"sigla\\\":\\\"RJ\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":6,\\\"nome\\\":\\\"Santa Catarina\\\",\\\"sigla\\\":\\\"PR\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":2,\\\"nome\\\":\\\"Sorocaba\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":1,\\\"nome\\\":\\\"Taubate\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":11,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:16\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":12,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:35\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":13,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:42\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":14,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:42\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":15,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:42\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":16,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":17,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":19,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":21,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":22,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":23,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:44\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":26,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:44\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":10,\\\"nome\\\":\\\"TesteCidade1\\\",\\\"sigla\\\":\\\"XX\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 08:59:30\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":5,\\\"nome\\\":\\\"Ubatuba\\\",\\\"sigla\\\":\\\"RJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\"}]\"}"
+},{
+  "_id": {
+    "$oid": "5f8854929e710000f4005638"
+  },
+  "id": 9,
+  "logdetail": "{\"action\":\"Insert\",\"data\":\"{\\\"msgSuccess\\\":\\\"Documento inserido com sucesso\\\"}\"}"
+},{
+  "_id": {
+    "$oid": "5f8854c79e710000f4005639"
+  },
+  "id": 10,
+  "logdetail": "{\"action\":\"Update\",\"data\":\"{\\\"msgSuccess\\\":\\\"Documento atualizado com sucesso\\\"}\"}"
+},{
+  "_id": {
+    "$oid": "5f8854ec9e710000f400563a"
+  },
+  "id": 11,
+  "logdetail": "{\"action\":\"Remove\",\"data\":\"{\\\"msgSuccess\\\":\\\"Documento apagado com sucesso\\\"}\"}"
+},{
+  "_id": {
+    "$oid": "5f8855649e710000f400563b"
+  },
+  "id": 12,
+  "logdetail": "{\"action\":\"ListOrder\",\"data\":\"[{\\\"id\\\":7,\\\"nome\\\":\\\"Alphaville\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":4,\\\"nome\\\":\\\"Campo Grande\\\",\\\"sigla\\\":\\\"MS\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":11,\\\"nome\\\":\\\"Caraguatatuba\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":10,\\\"nome\\\":\\\"CidadeNova\\\",\\\"sigla\\\":\\\"RJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:00:56\\\"},{\\\"id\\\":24,\\\"nome\\\":\\\"Novidade\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:10:15\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":27,\\\"nome\\\":\\\"NovoTeste111\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:44:28\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":3,\\\"nome\\\":\\\"Rio de Janeiro\\\",\\\"sigla\\\":\\\"RJ\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":6,\\\"nome\\\":\\\"Santa Catarina\\\",\\\"sigla\\\":\\\"PR\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":2,\\\"nome\\\":\\\"Sorocaba\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":1,\\\"nome\\\":\\\"Taubate\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":11,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:16\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":12,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:35\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":13,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:42\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":14,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:42\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":15,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:42\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":16,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":17,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":19,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":21,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":22,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":26,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:44\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":10,\\\"nome\\\":\\\"TesteCidade1\\\",\\\"sigla\\\":\\\"XX\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 08:59:30\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":28,\\\"nome\\\":\\\"TesteLog\\\",\\\"sigla\\\":\\\"LO\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 10:54:26\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":5,\\\"nome\\\":\\\"Ubatuba\\\",\\\"sigla\\\":\\\"RJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\"}]\"}"
+},{
+  "_id": {
+    "$oid": "5f8855729e710000f400563c"
+  },
+  "id": 13,
+  "logdetail": "{\"action\":\"ListOrder\",\"data\":\"[{\\\"id\\\":7,\\\"nome\\\":\\\"Alphaville\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":4,\\\"nome\\\":\\\"Campo Grande\\\",\\\"sigla\\\":\\\"MS\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":11,\\\"nome\\\":\\\"Caraguatatuba\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":10,\\\"nome\\\":\\\"CidadeNova\\\",\\\"sigla\\\":\\\"RJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:00:56\\\"},{\\\"id\\\":24,\\\"nome\\\":\\\"Novidade\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:10:15\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":27,\\\"nome\\\":\\\"NovoTeste111\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:44:28\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":3,\\\"nome\\\":\\\"Rio de Janeiro\\\",\\\"sigla\\\":\\\"RJ\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":6,\\\"nome\\\":\\\"Santa Catarina\\\",\\\"sigla\\\":\\\"PR\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":2,\\\"nome\\\":\\\"Sorocaba\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":1,\\\"nome\\\":\\\"Taubate\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":11,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:16\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":12,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:35\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":13,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:42\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":14,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:42\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":15,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:42\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":16,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":17,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":19,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":21,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":22,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":26,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:44\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":10,\\\"nome\\\":\\\"TesteCidade1\\\",\\\"sigla\\\":\\\"XX\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 08:59:30\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":28,\\\"nome\\\":\\\"TesteLog\\\",\\\"sigla\\\":\\\"LO\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 10:54:26\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":5,\\\"nome\\\":\\\"Ubatuba\\\",\\\"sigla\\\":\\\"RJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\"}]\"}"
+},{
+  "_id": {
+    "$oid": "5f8855c69e710000f400563d"
+  },
+  "id": 14,
+  "logdetail": "{\"action\":\"ListOrder\",\"data\":\"[{\\\"id\\\":7,\\\"nome\\\":\\\"Alphaville\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":4,\\\"nome\\\":\\\"Campo Grande\\\",\\\"sigla\\\":\\\"MS\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":11,\\\"nome\\\":\\\"Caraguatatuba\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":10,\\\"nome\\\":\\\"CidadeNova\\\",\\\"sigla\\\":\\\"RJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:00:56\\\"},{\\\"id\\\":24,\\\"nome\\\":\\\"Novidade\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:10:15\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":27,\\\"nome\\\":\\\"NovoTeste111\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:44:28\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":3,\\\"nome\\\":\\\"Rio de Janeiro\\\",\\\"sigla\\\":\\\"RJ\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":6,\\\"nome\\\":\\\"Santa Catarina\\\",\\\"sigla\\\":\\\"PR\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":2,\\\"nome\\\":\\\"Sorocaba\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":1,\\\"nome\\\":\\\"Taubate\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":11,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:16\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":12,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:35\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":13,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:42\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":14,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:42\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":15,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:42\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":16,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":17,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":19,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":21,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":22,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":26,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:44\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":10,\\\"nome\\\":\\\"TesteCidade1\\\",\\\"sigla\\\":\\\"XX\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 08:59:30\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":28,\\\"nome\\\":\\\"TesteLog\\\",\\\"sigla\\\":\\\"LO\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 10:54:26\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":5,\\\"nome\\\":\\\"Ubatuba\\\",\\\"sigla\\\":\\\"RJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\"}]\"}"
+},{
+  "_id": {
+    "$oid": "5f8855d39e710000f400563e"
+  },
+  "id": 15,
+  "logdetail": "{\"action\":\"ListOrder\",\"data\":\"[{\\\"id\\\":7,\\\"nome\\\":\\\"Alphaville\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":4,\\\"nome\\\":\\\"Campo Grande\\\",\\\"sigla\\\":\\\"MS\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":11,\\\"nome\\\":\\\"Caraguatatuba\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":10,\\\"nome\\\":\\\"CidadeNova\\\",\\\"sigla\\\":\\\"RJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:00:56\\\"},{\\\"id\\\":24,\\\"nome\\\":\\\"Novidade\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:10:15\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":27,\\\"nome\\\":\\\"NovoTeste111\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:44:28\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":3,\\\"nome\\\":\\\"Rio de Janeiro\\\",\\\"sigla\\\":\\\"RJ\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":6,\\\"nome\\\":\\\"Santa Catarina\\\",\\\"sigla\\\":\\\"PR\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":2,\\\"nome\\\":\\\"Sorocaba\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":1,\\\"nome\\\":\\\"Taubate\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":11,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:16\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":12,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:35\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":13,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:42\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":14,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:42\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":15,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:42\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":16,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":17,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":19,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":21,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":22,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":26,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:44\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":10,\\\"nome\\\":\\\"TesteCidade1\\\",\\\"sigla\\\":\\\"XX\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 08:59:30\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":28,\\\"nome\\\":\\\"TesteLog\\\",\\\"sigla\\\":\\\"LO\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 10:54:26\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":5,\\\"nome\\\":\\\"Ubatuba\\\",\\\"sigla\\\":\\\"RJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\"}]\"}"
+},{
+  "_id": {
+    "$oid": "5f8855ff9e710000f400563f"
+  },
+  "id": 16,
+  "logdetail": "{\"action\":\"ListOrder\",\"data\":\"[{\\\"id\\\":7,\\\"nome\\\":\\\"Alphaville\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":4,\\\"nome\\\":\\\"Campo Grande\\\",\\\"sigla\\\":\\\"MS\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":11,\\\"nome\\\":\\\"Caraguatatuba\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":10,\\\"nome\\\":\\\"CidadeNova\\\",\\\"sigla\\\":\\\"RJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:00:56\\\"},{\\\"id\\\":24,\\\"nome\\\":\\\"Novidade\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:10:15\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":27,\\\"nome\\\":\\\"NovoTeste111\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:44:28\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":3,\\\"nome\\\":\\\"Rio de Janeiro\\\",\\\"sigla\\\":\\\"RJ\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":6,\\\"nome\\\":\\\"Santa Catarina\\\",\\\"sigla\\\":\\\"PR\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":2,\\\"nome\\\":\\\"Sorocaba\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":1,\\\"nome\\\":\\\"Taubate\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":11,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:16\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":12,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:35\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":13,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:42\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":14,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:42\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":15,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:42\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":16,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":17,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":19,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":21,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":22,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:43\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":26,\\\"nome\\\":\\\"Testando\\\",\\\"sigla\\\":\\\"JJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:06:44\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":10,\\\"nome\\\":\\\"TesteCidade1\\\",\\\"sigla\\\":\\\"XX\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 08:59:30\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":28,\\\"nome\\\":\\\"TesteLog\\\",\\\"sigla\\\":\\\"LO\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 10:54:26\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":5,\\\"nome\\\":\\\"Ubatuba\\\",\\\"sigla\\\":\\\"RJ\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\"}]\"}"
+},{
+  "_id": {
+    "$oid": "5f8857ef9e710000f4005640"
+  },
+  "id": 17,
+  "logdetail": "{\"action\":\"Search\",\"data\":\"[{\\\"id\\\":1,\\\"nome\\\":\\\"Taubate\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":2,\\\"nome\\\":\\\"Sorocaba\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"10\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"14\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":7,\\\"nome\\\":\\\"Alphaville\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":11,\\\"nome\\\":\\\"Caraguatatuba\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\",\\\"data_atualizacao\\\":\\\"15\\\\\\/10\\\\\\/2020\\\"},{\\\"id\\\":24,\\\"nome\\\":\\\"Novidade\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:10:15\\\",\\\"data_atualizacao\\\":\\\"\\\"},{\\\"id\\\":27,\\\"nome\\\":\\\"NovoTeste111\\\",\\\"sigla\\\":\\\"SP\\\",\\\"data_criacao\\\":\\\"15\\\\\\/10\\\\\\/2020 09:44:28\\\",\\\"data_atualizacao\\\":\\\"\\\"}]\"}"
+},{
+  "_id": {
+    "$oid": "5f8873449e710000f4005641"
+  },
+  "id": 18,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f8873669e710000f4005642"
+  },
+  "id": 19,
+  "logdetail": "{\"action\":\"Authorization\",\"data\":\"Error zoox.api.local Nao Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f8873b39e710000f4005643"
+  },
+  "id": 20,
+  "logdetail": "{\"action\":\"Authentication\",\"data\":\"Error 123 Nao Autenticada\"}"
+},{
+  "_id": {
+    "$oid": "5f88744f9e710000f4005644"
+  },
+  "id": 21,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88746c9e710000f4005645"
+  },
+  "id": 22,
+  "logdetail": "{\"action\":\"Authentication\",\"data\":\"Error 123 Nao Autenticada\"}"
+},{
+  "_id": {
+    "$oid": "5f8874749e710000f4005646"
+  },
+  "id": 23,
+  "logdetail": "{\"action\":\"Authorization\",\"data\":\"Error 123 Nao Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f8874839e710000f4005647"
+  },
+  "id": 24,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88bfd19e710000f4005648"
+  },
+  "id": 25,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88c0129e710000f4005649"
+  },
+  "id": 26,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88c02f9e710000f400564a"
+  },
+  "id": 27,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88c0709e710000f400564b"
+  },
+  "id": 28,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88c07e9e710000f400564c"
+  },
+  "id": 29,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88c0d69e710000f400564d"
+  },
+  "id": 30,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88c0f89e710000f400564e"
+  },
+  "id": 31,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88c1f39e710000f400564f"
+  },
+  "id": 32,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88c2029e710000f4005650"
+  },
+  "id": 33,
+  "logdetail": "{\"action\":\"Authorization\",\"data\":\"Error zoox.api.local Nao Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88c2089e710000f4005651"
+  },
+  "id": 34,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88c20a9e710000f4005652"
+  },
+  "id": 35,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88c5789e710000f4005653"
+  },
+  "id": 36,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88c5909e710000f4005654"
+  },
+  "id": 37,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88c5c79e710000f4005655"
+  },
+  "id": 38,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88c5c89e710000f4005656"
+  },
+  "id": 39,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88c6409e710000f4005657"
+  },
+  "id": 40,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88c7159e710000f4005659"
+  },
+  "id": 41,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88c7889e710000f400565b"
+  },
+  "id": 42,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88c7989e710000f400565c"
+  },
+  "id": 43,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88c7999e710000f400565d"
+  },
+  "id": 44,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88c8269e710000f400565e"
+  },
+  "id": 45,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88c8d09e710000f400565f"
+  },
+  "id": 46,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88c8ed9e710000f4005660"
+  },
+  "id": 47,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88c8ef9e710000f4005661"
+  },
+  "id": 48,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88c8ef9e710000f4005662"
+  },
+  "id": 49,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88c8ef9e710000f4005663"
+  },
+  "id": 50,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88c9219e710000f4005664"
+  },
+  "id": 51,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88ca2e9e710000f4005666"
+  },
+  "id": 52,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88cb169e710000f4005668"
+  },
+  "id": 53,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88cbfd9e710000f400566a"
+  },
+  "id": 54,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88cc0a9e710000f400566b"
+  },
+  "id": 55,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88cc0f9e710000f400566c"
+  },
+  "id": 56,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88cc409e710000f400566d"
+  },
+  "id": 57,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88cc629e710000f400566e"
+  },
+  "id": 58,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88cc639e710000f400566f"
+  },
+  "id": 59,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88cc949e710000f4005670"
+  },
+  "id": 60,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88cd3f9e710000f4005672"
+  },
+  "id": 61,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88ce5d9e710000f4005674"
+  },
+  "id": 62,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+},{
+  "_id": {
+    "$oid": "5f88ceb19e710000f4005676"
+  },
+  "id": 63,
+  "logdetail": "{\"action\":\"ControllAccess\",\"data\":\"zoox.api.local Autenticada e Autorizada\"}"
+}]

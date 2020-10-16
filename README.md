@@ -1,9 +1,21 @@
-# zoox-test
+#zoox-test
 
-# HOW TO MAKE THE INSTALATION
+#HOW TO MAKE THE INSTALATION AND TEST
 
+#Requirements
+- PHP 7.4
+- XAMPP v3.2.4
+- MongoDB 4.4.1
+- Compass 1.22.1
+- Composer dependencies
+
+> NOTE: This project and app was tested on Windows environment
+
+#Configure Apache Server - XAMPP
 C:\webserver\xampp-php7.4.8\apache\conf\extra\httpd-vhosts.conf
 
+- API
+<pre>
 <VirtualHost *:80>
     ServerAdmin webmaster@email.com.br
     DocumentRoot "C:/webserver/xampp-php7.4.8/htdocs/zoox-api"
@@ -23,7 +35,10 @@ C:\webserver\xampp-php7.4.8\apache\conf\extra\httpd-vhosts.conf
 		
     </Directory>
 </VirtualHost>
+</pre>
 
+- APP with permission
+<pre>
 <VirtualHost *:80>
     ServerAdmin webmaster@email.com.br
     DocumentRoot "C:/webserver/xampp-php7.4.8/htdocs/zoox-test"
@@ -43,7 +58,10 @@ C:\webserver\xampp-php7.4.8\apache\conf\extra\httpd-vhosts.conf
 		
     </Directory>
 </VirtualHost>
+</pre>
 
+- APP without permission
+<pre>
 <VirtualHost *:80>
     ServerAdmin webmaster@email.com.br
     DocumentRoot "C:/webserver/xampp-php7.4.8/htdocs/zoox-test"
@@ -63,9 +81,13 @@ C:\webserver\xampp-php7.4.8\apache\conf\extra\httpd-vhosts.conf
 		
     </Directory>
 </VirtualHost>
+</pre>
+
+#Configure hosts file
 
 C:\Windows\System32\drivers\etc\hosts
 
+<pre>
 # Copyright (c) 1993-2009 Microsoft Corp.
 #
 # This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
@@ -91,5 +113,81 @@ C:\Windows\System32\drivers\etc\hosts
 	127.0.0.1       zoox.api.local
 	127.0.0.1       zoox.test.local
 	127.0.0.1       zoox.denied.local
+</pre>
 
-# NOTE:
+#Restart your webserver
+- XAMPP::Controll (by example)
+
+#Import the MongoDB databases that are placed on zoox-api/db in this project
+- zoox_mongodb_collection_apikey.json
+- zoox_mongodb_collection_auth.json
+- zoox_mongodb_collection_cidade.json
+- zoox_mongodb_collection_estado.json
+- zoox_mongodb_collection_log.json
+
+#IMPORTANT:
+>Put the files files zoox-test on your localhost root path, so access the app by http://zoox.test.local/zoox-dash.php.
+
+>The API should be defined with the correct local dns name for the correct funcionally this test, by example: http://zoox.api.local
+
+#Requests
+
+> NOTE !<br />
+(:col) = collection and (:data) = data
+
+- Data Search:
+> <strong>GET</strong><br />
+> zoox.api.local/action/search/:col/:data
+> <br /><strong>Sample:</strong><br />
+> http://zoox.api.local/action/search/cidade/SP
+
+- Data List
+> <strong>GET</strong><br />
+> zoox.api.local/action/list/:col
+> <br /><strong>Sample:</strong><br />
+> http://zoox.api.local/action/list/cidade
+
+- Data Specific List
+> <strong>GET</strong><br />
+> zoox.api.local/action/listone/:col/:data
+> <br /><strong>Sample:</strong><br />
+> http://zoox.api.local/action/listone/cidade/1
+
+- Data Ordered List
+> <strong>GET</strong><br />
+> zoox.api.local/action/listorder/:col/:data
+> <br /><strong>Sample:</strong><br />
+> http://zoox.api.local/action/listorder/cidade/nome
+
+- Data Insert
+> <strong>POST</strong><br />
+> zoox.api.local/action/insert/:col/:data1/:data2
+> <br /><strong>Sample:</strong><br />
+> http://zoox.api.local/action/insert/cidade/Alphaville/SP
+
+- Data Update
+> <strong>POST</strong><br />
+> zoox.api.local/action/update/:col/:data/:data1/:data2
+> <br /><strong>Sample:</strong><br />
+> http://zoox.api.local/action/update/cidade/5/Ubatuba/RJ
+
+- Data Delete
+> <strong>POST</strong><br />
+> zoox.api.local/action/delete/:col/:data
+> <br /><strong>Sample:</strong><br />
+> http://zoox.api.local/action/delete/cidade/9
+>
+
+#Authentication
+The app authentication is make in the collection database zoox_mongodb_collection_auth, so you should be register your app in the collection database, example:
+* {id: 1, app: zoox.test.local}
+* {id: 2, app: zoox.api.local}
+
+#Authorization
+After app authentication the api request your token to check your identiry correctly in the collection zoox_mongodb_collection_apikey, so you need register or create a token of access this api, example:
+* {id: 1, app: "zoox.test.local", token: "MTIzNDU2Nzg5MA==", timelife: 1}
+* {id: 2, app: "zoox.test.local", token: "MTIzNDU2Nzg5MA==", timelife: 1}
+
+On both cases you should be send the token in the request header with name <strong>x-Api-key</strong> 
+
+> NOTE: This project is part of the zoox project and must be used together with the zoox-test. 

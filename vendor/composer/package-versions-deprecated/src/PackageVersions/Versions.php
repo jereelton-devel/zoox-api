@@ -37,7 +37,7 @@ final class Versions
   'jean85/pretty-package-versions' => '1.5.1@a917488320c20057da87f67d0d40543dd9427f7a',
   'mongodb/mongodb' => '1.7.1@b35af66631a11ee730ff1fde295f71e89f01f121',
   'slim/slim' => '2.0.0@3e95c9abbc57a8f023ab4dacebcab9dae4d9f1f0',
-  '__root__' => 'No version set (parsed as 1.0.0)@',
+  '__root__' => 'dev-devel@998d4b72156390a5f05318feb36883e6a7a5f127',
 );
 
     private function __construct()

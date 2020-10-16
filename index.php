@@ -5,273 +5,163 @@
 require __DIR__ . "/vendor/autoload.php";
 
 use \Slim\Slim;
-use \MongoDB\Client;
+use \ZooxTest\ZooxTestDataHandler;
+use \ZooxTest\ZooxTestLogger;
+use \ZooxTest\ZooxTestAuth;
+use \ZooxTest\ZooxTestApikey;
 
 $app = new Slim();
 
-date_default_timezone_set("America/Sao_Paulo");
+$checkAuthentication = function($app) {
 
-$headers = apache_request_headers();
-//$origin  = $headers['Origin'];
-/*echo '<pre>';
-var_dump($headers);
-echo '</pre>';*/
+    $auth = new ZooxTestAuth();
+    if($auth->findAppAuth($app) == false) {
 
-//Contar Especifico
-/*$zooxcount = $client->selectDatabase('zoox_mongodb')->selectCollection('zoox_mongodb_collection')->countDocuments(["nome"=>"Rio de Janeiro"]);*/
+        $logger = new ZooxTestLogger();
+        $logger->dataLogInsert(json_encode(["action"=>"Authentication", "data"=>"Error $app Nao Autenticada"]));
 
-//Busca
-$app->get('/action/search/:col/:data', function($col, $data) {
-
-    $client = new Client(
-        'mongodb://localhost:27017'
-    );
-
-    $arrayDocs = [];
-
-    $zooxlistNome = $client
-        ->selectDatabase('zoox_mongodb')
-        ->selectCollection('zoox_mongodb_collection_'.$col)
-        ->find(["nome" => "{$data}"]);
-
-    $zooxlistSigla = $client
-        ->selectDatabase('zoox_mongodb')
-        ->selectCollection('zoox_mongodb_collection_'.$col)
-        ->find(["sigla"=>"{$data}"]);
-
-    foreach ($zooxlistNome as $document) {
-
-        $arrayDocs[] = [
-            "id" => $document["id"],
-            "nome" => $document["nome"],
-            "sigla" => $document["sigla"],
-            "data_criacao" => $document["data_criacao"],
-            "data_atualizacao" => $document["data_atualizacao"]
-        ];
+        echo json_encode(["msgError"=>"Nao Autenticado"]);
+        die;
     }
+};
 
-    foreach ($zooxlistSigla as $document) {
+$checkAuthorization = function($app, $token) {
 
-        $arrayDocs[] = [
-            "id" => $document["id"],
-            "nome" => $document["nome"],
-            "sigla" => $document["sigla"],
-            "data_criacao" => $document["data_criacao"],
-            "data_atualizacao" => $document["data_atualizacao"]
-        ];
+    $authorization = new ZooxTestApikey();
+    if($authorization->findApiKey($app, $token) == false) {
+
+        $logger = new ZooxTestLogger();
+        $logger->dataLogInsert(json_encode(["action"=>"Authorization", "data"=>"Error $app Nao Autorizada"]));
+
+        echo json_encode(["msgError"=>"Nao Autorizado"]);
+        die;
     }
+};
 
-    if(count($arrayDocs) > 0) {
+$controllAccess = function() {
 
-        echo json_encode($arrayDocs);
+    global $checkAuthentication;
+    global $checkAuthorization;
 
+    $headers = apache_request_headers();
+    $origin  = (isset($headers['Origin']) && $headers['Origin'] != "") ? $headers['Origin'] : '';
+    $host    = (isset($headers['Host']) && $headers['Host'] != "") ? $headers['Host'] : '';
+    $xApiKey = (isset($headers['x-Api-key']) && $headers['x-Api-key'] != "") ? $headers['x-Api-key'] : '';
+
+    /*echo '<pre>';
+    var_dump($headers, $origin, $host, $xApiKey);
+    echo '</pre>';*/
+
+    if($origin != "") {
+        $appAuth = $origin;
+    } elseif($host != "") {
+        $appAuth = $host;
     } else {
-
-        echo json_encode(['msgError' => 'Não foi possivel ordenar a lista']);
-
+        echo false;
+        die;
     }
+
+    if($xApiKey == "") {
+        echo "<h1>ZOOX-API-LOCAL::Acesso Restrito</h1>";
+        die;
+    }
+
+    $checkAuthentication($appAuth);
+    $checkAuthorization($appAuth, $xApiKey);
+
+    $logger = new ZooxTestLogger();
+    $logger->dataLogInsert(json_encode(["action"=>"ControllAccess", "data"=>"$appAuth Autenticada e Autorizada"]));
+
+};
+
+//Busca - http://zoox.api.local/action/search/cidade/SP (Exemplo)
+$app->get('/action/search/:col/:data', $controllAccess, function($col, $data) {
+
+    $search = new ZooxTestDataHandler($col);
+    $response = $search->dataSearch($data);
+
+    $logger = new ZooxTestLogger();
+    $logger->dataLogInsert(json_encode(["action"=>"Search", "data"=>"$response"]));
+
+    echo $response;
 
 });
 
-//Listar
-$app->get('/action/list/:col', function($col) {
+//Listar - http://zoox.api.local/action/list/cidade (Exemplo)
+$app->get('/action/list/:col', $controllAccess, function($col) {
 
-    $client = new Client(
-        'mongodb://localhost:27017'
-    );
+    $search = new ZooxTestDataHandler($col);
+    $response = $search->dataList();
 
-    $zooxcount = $client
-        ->selectDatabase('zoox_mongodb')
-        ->selectCollection('zoox_mongodb_collection_'.$col)
-        ->countDocuments();
+    $logger = new ZooxTestLogger();
+    $logger->dataLogInsert(json_encode(["action"=>"List", "data"=>"$response"]));
 
-    if($zooxcount > 0) {
-
-        $zooxlist = $client
-            ->selectDatabase('zoox_mongodb')
-            ->selectCollection('zoox_mongodb_collection_'.$col)
-            ->find();
-
-        foreach ($zooxlist as $document) {
-
-            $arrayDocs[] = [
-                "id" => $document["id"],
-                "nome" => $document["nome"],
-                "sigla" => $document["sigla"],
-                "data_criacao" => $document["data_criacao"],
-                "data_atualizacao" => $document["data_atualizacao"]
-            ];
-
-        }
-
-        echo json_encode($arrayDocs);
-
-    } else {
-
-        echo json_encode(['msgError' => 'Nenhum registro encontrado']);
-
-    }
+    echo $response;
 
 });
 
-//Listagem Especifica
-$app->get('/action/listone/:col/:data', function($col, $data) {
+//Listagem Especifica - http://zoox.api.local/action/listone/cidade/1 (Exemplo)
+$app->get('/action/listone/:col/:data', $controllAccess, function($col, $data) {
 
-    $client = new Client(
-        'mongodb://localhost:27017'
-    );
+    $search = new ZooxTestDataHandler($col);
+    $response = $search->dataListOne($data);
 
-    $zooxcount = $client
-        ->selectDatabase('zoox_mongodb')
-        ->selectCollection('zoox_mongodb_collection_'.$col)
-        ->countDocuments(["id"=>intval($data)]);
+    $logger = new ZooxTestLogger();
+    $logger->dataLogInsert(json_encode(["action"=>"ListOne", "data"=>"$response"]));
 
-    if($zooxcount > 0) {
-
-        $zooxlist = $client
-            ->selectDatabase('zoox_mongodb')
-            ->selectCollection('zoox_mongodb_collection_' . $col)
-            ->findOne(["id" => intval($data)]);
-
-        $arrayDocs[] = [
-            "id" => $zooxlist["id"],
-            "nome" => $zooxlist["nome"],
-            "sigla" => $zooxlist["sigla"],
-            "data_criacao" => $zooxlist["data_criacao"],
-            "data_atualizacao" => $zooxlist["data_atualizacao"]
-        ];
-
-        echo json_encode($arrayDocs);
-
-    } else {
-
-        echo json_encode(['msgError' => 'Registro não encontrado']);
-    }
+    echo $response;
 
 });
 
-//Listagem ordenada
-$app->get('/action/listorder/:col/:data', function($col, $data) {
+//Listagem ordenada - http://zoox.api.local/action/listorder/cidade/nome (Exemplo)
+$app->get('/action/listorder/:col/:data', $controllAccess, function($col, $data) {
 
-    $client = new Client(
-        'mongodb://localhost:27017'
-    );
+    $search = new ZooxTestDataHandler($col);
+    $response = $search->dataListOrder($data);
 
-    $zooxlist = $client
-        ->selectDatabase('zoox_mongodb')
-        ->selectCollection('zoox_mongodb_collection_'.$col)
-        ->find([],['sort'=>["{$data}" => 1]]);
+    $logger = new ZooxTestLogger();
+    $logger->dataLogInsert(json_encode(["action"=>"ListOrder", "data"=>"$response"]));
 
-    foreach ($zooxlist as $document) {
-
-        $arrayDocs[] = [
-            "id" => $document["id"],
-            "nome" => $document["nome"],
-            "sigla" => $document["sigla"],
-            "data_criacao" => $document["data_criacao"],
-            "data_atualizacao" => $document["data_atualizacao"]
-        ];
-    }
-
-    if(count($arrayDocs) > 0) {
-
-        echo json_encode($arrayDocs);
-
-    } else {
-
-        echo json_encode(['msgError' => 'Não foi possivel ordenar a lista']);
-
-    }
+    echo $response;
 
 });
 
-//Inserir
-$app->post('/action/insert/:col/:data1/:data2', function($col, $data1, $data2) {
+//Inserir - http://zoox.api.local/action/insert/cidade/Alphaville/SP (Exemplo)
+$app->post('/action/insert/:col/:data1/:data2', $controllAccess, function($col, $data1, $data2) {
 
-    $client = new Client(
-        'mongodb://localhost:27017'
-    );
+    $search = new ZooxTestDataHandler($col);
+    $response = $search->dataInsert($data1, $data2);
 
-    $zooxinsert = $client
-        ->selectDatabase('zoox_mongodb')
-        ->selectCollection('zoox_mongodb_collection_'.$col)
-        ->insertOne(
-            [
-                "id"=>$client
-                    ->selectDatabase('zoox_mongodb')
-                    ->selectCollection('zoox_mongodb_collection_'.$col)
-                    ->estimatedDocumentCount([]) + 1,
-                "nome"=>"{$data1}",
-                "sigla"=>"{$data2}",
-                "data_criacao"=>date("d/m/Y"),
-                "data_atualizacao"=>""
-            ]);
+    $logger = new ZooxTestLogger();
+    $logger->dataLogInsert(json_encode(["action"=>"Insert", "data"=>"$response"]));
 
-    if($zooxinsert->getInsertedCount() > 0) {
-
-        echo json_encode(['msgSuccess' => 'Documento inserido com sucesso']);
-
-    } else {
-
-        echo json_encode(['msgError' => 'Não foi possivel inserir o documento']);
-
-    }
+    echo $response;
 
 });
 
-//Atualizar
-$app->post('/action/update/:col/:data/:data1/:data2', function($col, $data, $data1, $data2) {
+//Atualizar - http://zoox.api.local/action/update/cidade/5/Ubatuba/RJ (Exemplo)
+$app->post('/action/update/:col/:data/:data1/:data2', $controllAccess, function($col, $data, $data1, $data2) {
 
-    $client = new Client(
-        'mongodb://localhost:27017'
-    );
+    $search = new ZooxTestDataHandler($col);
+    $response = $search->dataUpdate($data, $data1, $data2);
 
-    $zooxupdate = $client
-        ->selectDatabase('zoox_mongodb')
-        ->selectCollection('zoox_mongodb_collection_'.$col)
-        ->updateOne(
-            ["id"=>intval($data)],
-            ['$set'=>
-                [
-                    "nome"=>"{$data1}",
-                    "sigla"=>"{$data2}",
-                    "data_atualizacao"=>date("d/m/Y")
-                ]
-            ]);
+    $logger = new ZooxTestLogger();
+    $logger->dataLogInsert(json_encode(["action"=>"Update", "data"=>"$response"]));
 
-    if($zooxupdate->getModifiedCount() > 0 || $zooxupdate->getMatchedCount()) {
-
-        echo json_encode(['msgSuccess' => 'Documento atualizado com sucesso']);
-
-    } else {
-
-        echo json_encode(['msgError' => 'Não foi possivel atualizar o documento']);
-
-    }
+    echo $response;
 
 });
 
-//Remover
-$app->post('/action/delete/:col/:data', function($col, $data) {
+//Remover - http://zoox.api.local/action/delete/cidade/9 (Exemplo)
+$app->post('/action/delete/:col/:data', $controllAccess, function($col, $data) {
 
-    $client = new Client(
-        'mongodb://localhost:27017'
-    );
+    $search = new ZooxTestDataHandler($col);
+    $response = $search->dataDelete($data);
 
-    $zooxdelete = $client
-        ->selectDatabase('zoox_mongodb')
-        ->selectCollection('zoox_mongodb_collection_'.$col)
-        ->deleteOne(["id"=>intval($data)]);
+    $logger = new ZooxTestLogger();
+    $logger->dataLogInsert(json_encode(["action"=>"Remove", "data"=>"$response"]));
 
-    if($zooxdelete->getDeletedCount()) {
-
-        echo json_encode(['msgSuccess' => 'Documento apagado com sucesso']);
-
-    } else {
-
-        echo json_encode(['msgError' => 'Não foi possivel apagar o documento']);
-
-    }
+    echo $response;
 
 });
 
