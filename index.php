@@ -74,7 +74,6 @@ $controllAccess = function() {
 
 };
 
-//Busca - http://zoox.api.local/action/search/cidade/SP (Exemplo)
 $app->get('/action/search/:col/:data', $controllAccess, function($col, $data) {
 
     $search = new ZooxTestDataHandler($col);
@@ -87,7 +86,6 @@ $app->get('/action/search/:col/:data', $controllAccess, function($col, $data) {
 
 });
 
-//Listar - http://zoox.api.local/action/list/cidade (Exemplo)
 $app->get('/action/list/:col', $controllAccess, function($col) {
 
     $search = new ZooxTestDataHandler($col);
@@ -100,7 +98,6 @@ $app->get('/action/list/:col', $controllAccess, function($col) {
 
 });
 
-//Listagem Especifica - http://zoox.api.local/action/listone/cidade/1 (Exemplo)
 $app->get('/action/listone/:col/:data', $controllAccess, function($col, $data) {
 
     $search = new ZooxTestDataHandler($col);
@@ -113,7 +110,6 @@ $app->get('/action/listone/:col/:data', $controllAccess, function($col, $data) {
 
 });
 
-//Listagem ordenada - http://zoox.api.local/action/listorder/cidade/nome/asc (Exemplo)
 $app->get('/action/listorder/:col/:data/:type', $controllAccess, function($col, $data, $type) {
 
     $search = new ZooxTestDataHandler($col);
@@ -126,7 +122,6 @@ $app->get('/action/listorder/:col/:data/:type', $controllAccess, function($col, 
 
 });
 
-//Inserir - http://zoox.api.local/action/insert/cidade/Alphaville/SP (Exemplo)
 $app->post('/action/insert/:col/:data1/:data2', $controllAccess, function($col, $data1, $data2) {
 
     $search = new ZooxTestDataHandler($col);
@@ -139,7 +134,6 @@ $app->post('/action/insert/:col/:data1/:data2', $controllAccess, function($col, 
 
 });
 
-//Atualizar - http://zoox.api.local/action/update/cidade/5/Ubatuba/RJ (Exemplo)
 $app->post('/action/update/:col/:data/:data1/:data2', $controllAccess, function($col, $data, $data1, $data2) {
 
     $search = new ZooxTestDataHandler($col);
@@ -152,7 +146,6 @@ $app->post('/action/update/:col/:data/:data1/:data2', $controllAccess, function(
 
 });
 
-//Remover - http://zoox.api.local/action/delete/cidade/9 (Exemplo)
 $app->post('/action/delete/:col/:data', $controllAccess, function($col, $data) {
 
     $search = new ZooxTestDataHandler($col);
