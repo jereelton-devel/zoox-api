@@ -133,7 +133,7 @@ C:\Windows\System32\drivers\etc\hosts
 - zoox_mongodb_collection_log.json
 
 # IMPORTANT:
->Put the files files zoox-test on your localhost root path, so access the app by http://zoox.test.local/zoox-dash.php.
+>Put the files files zoox-test on your localhost root path, so access the app by http://zoox.test.local.
 
 >The API should be defined with the correct local dns name for the correct funcionally this test, by example: http://zoox.api.local
 
