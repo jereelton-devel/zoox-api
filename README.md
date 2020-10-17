@@ -1,6 +1,6 @@
 # zoox-challege
 
-# How do make the install and test
+# How do use and test this api
 
 # Requirements
 - PHP 7.4
@@ -8,13 +8,15 @@
 - MongoDB 4.4.1
 - Compass 1.22.1
 - Composer dependencies
+- JSON Encodding for Requests
+- Application Register in the database
 
 > NOTE: This project and app was tested on Windows environment
 
 > NOTE: Use URL-Encode to send a request for api zoox-api: urlencode (PHP)
 
 > NOTE: This project is part of the zoox project and must be used together with the <h1>zoox-test</h1>
-> https://github.com/jereelton-devel/zoox-test/tree/devel 
+> https://github.com/jereelton-devel/zoox-test/tree/master 
 
 # Configure Apache Server - XAMPP
 C:\webserver\xampp-php7.4.8\apache\conf\extra\httpd-vhosts.conf
@@ -142,48 +144,219 @@ C:\Windows\System32\drivers\etc\hosts
 > NOTE !<br />
 (:col) = collection and (:data) = data
 
-- Data Search:
+- <h4>Data List: List all documents</h4>
 > <strong>GET</strong><br />
-> zoox.api.local/action/search/:col/:data/:type
+> zoox.api.local/action/list/{JSON-DATA}
 > <br /><strong>Sample:</strong><br />
-> http://zoox.api.local/action/search/cidade/SP/asc
+> http://zoox.api.local/action/list/[{"collection":"cidade"}]
 
-- Data List
+<strong>PHP Sample URL Request:</strong>
+<pre>
+$data_json = json_encode([
+             "collection" => $target
+         ], JSON_UNESCAPED_UNICODE);
+ 
+         $this->url = "http://zoox.api.local/action/list/{$data_json}";
+</pre>
+
+<strong>Response:</strong>
+<pre>
+[
+   {
+      "id":1,
+      "nome":"Amazonas",
+      "sigla":"AM",
+      "data_criacao":"10\/10\/2020",
+      "data_atualizacao":"16\/10\/2020 11:42:23"
+   },
+   {
+      "id":2,
+      "nome":"São Paulo",
+      "sigla":"SP",
+      "data_criacao":"10\/10\/2020",
+      "data_atualizacao":"16\/10\/2020 11:15:23"
+   }
+]
+</pre>
+
+- <h4>Data Specific List: List one document</h4>
 > <strong>GET</strong><br />
-> zoox.api.local/action/list/:col
+> zoox.api.local/action/listone/{JSON-DATA}
 > <br /><strong>Sample:</strong><br />
-> http://zoox.api.local/action/list/cidade
+> http://zoox.api.local/action/listone/[{"collection":"cidade","id":1}]
 
-- Data Specific List
+<strong>PHP Sample URL Request:</strong>
+<pre>
+$data_json = json_encode([
+            "collection" => $target,
+            "id" => $id
+        ], JSON_UNESCAPED_UNICODE);
+
+        $this->url = "http://zoox.api.local/action/listone/{$data_json}";
+</pre>
+
+<strong>Response:</strong>
+<pre>
+[
+   {
+      "id":1,
+      "nome":"Amazonas",
+      "sigla":"AM",
+      "data_criacao":"10\/10\/2020",
+      "data_atualizacao":"16\/10\/2020 11:42:23"
+   }
+]
+</pre>
+
+- <h4>Data Ordered List: List all documents ordered</h4>
 > <strong>GET</strong><br />
-> zoox.api.local/action/listone/:col/:data
+> zoox.api.local/action/listorder/{JSON-DATA}
 > <br /><strong>Sample:</strong><br />
-> http://zoox.api.local/action/listone/cidade/1
+> http://zoox.api.local/action/listorder/[{"collection":"cidade","order":"nome","type":"asc"}]
 
-- Data Ordered List
+<strong>PHP Sample URL Request:</strong>
+<pre>
+$data_json = json_encode([
+            "collection" => $target,
+            "order" => $order,
+            "type" => $type
+        ], JSON_UNESCAPED_UNICODE);
+
+        $this->url = "http://zoox.api.local/action/listorder/{$data_json}";
+</pre>
+
+<strong>Response:</strong>
+<pre>
+[
+   {
+      "id":8,
+      "nome":"Amapa",
+      "sigla":"AP",
+      "data_criacao":"16\/10\/2020 13:29:34",
+      "data_atualizacao":""
+   },
+   {
+      "id":1,
+      "nome":"Amazonas",
+      "sigla":"AM",
+      "data_criacao":"10\/10\/2020",
+      "data_atualizacao":"16\/10\/2020 11:42:23"
+   }
+]
+</pre>
+
+- <h4>Data Search: Search one or more documents</h4>
 > <strong>GET</strong><br />
-> zoox.api.local/action/listorder/:col/:data
+> zoox.api.local/action/search/{JSON-DATA}
 > <br /><strong>Sample:</strong><br />
-> http://zoox.api.local/action/listorder/cidade/nome
+> http://zoox.api.local/action/search/[{"collection":"cidade","data":"Santos"}]
 
-- Data Insert
+<strong>PHP Sample URL Request:</strong>
+<pre>
+$data_json = json_encode([
+            "collection" => $target,
+            "data" => $data
+        ], JSON_UNESCAPED_UNICODE);
+
+        $this->url = "http://zoox.api.local/action/search/{$data_json}";
+</pre>
+
+<strong>Response:</strong>
+<pre>
+[
+   {
+      "id":8,
+      "nome":"Amapa",
+      "sigla":"AP",
+      "data_criacao":"16\/10\/2020 13:29:34",
+      "data_atualizacao":""
+   }
+]
+</pre>
+
+- <h4>Data Insert: Insert any document</h4>
 > <strong>POST</strong><br />
-> zoox.api.local/action/insert/:col/:data1/:data2
+> zoox.api.local/action/insert/{JSON-DATA}
 > <br /><strong>Sample:</strong><br />
-> http://zoox.api.local/action/insert/cidade/Alphaville/SP
+> http://zoox.api.local/action/insert/cidade/[{"collection":"cidade","name":"Santos","sigla":"SP"}]
 
-- Data Update
-> <strong>POST</strong><br />
-> zoox.api.local/action/update/:col/:data/:data1/:data2
-> <br /><strong>Sample:</strong><br />
-> http://zoox.api.local/action/update/cidade/5/Ubatuba/RJ
+<strong>PHP Sample URL Request:</strong>
+<pre>
+$data_json = json_encode([
+            "collection" => $target,
+            "name" => $name,
+            "sigla" => $sigla
+        ], JSON_UNESCAPED_UNICODE);
 
-- Data Delete
+        $this->url = "http://zoox.api.local/action/insert/{$data_json}";
+</pre>
+
+<strong>Response:</strong>
+<pre>
+{
+    "msgSuccess":"Documento inserido com sucesso"
+}
+
+{
+    "msgError":"Não foi possivel inserir o documento"
+}
+</pre>
+
+- Data Update: Update a document in database
 > <strong>POST</strong><br />
-> zoox.api.local/action/delete/:col/:data
+> zoox.api.local/action/update/{JSON-DATA}
 > <br /><strong>Sample:</strong><br />
-> http://zoox.api.local/action/delete/cidade/9
->
+> http://zoox.api.local/action/update/[{"collection":"cidade","id":1,"":"Santos",sigla":"SP"}]
+
+<strong>PHP Sample URL Request:</strong>
+<pre>
+$data_json = json_encode([
+            "collection" => $target,
+            "id" => $id,
+            "name" => $data1,
+            "sigla" => $data2
+        ], JSON_UNESCAPED_UNICODE);
+
+        $this->url = "http://zoox.api.local/action/update/{$data_json}";
+</pre>
+
+<strong>Response:</strong>
+<pre>
+{
+    "msgSuccess":"Documento atualizado com sucesso"
+}
+
+{
+    "msgError":"Não foi possivel atualizar o documento"
+}
+</pre>
+
+- Data Delete: Delete one document in the database
+> <strong>POST</strong><br />
+> zoox.api.local/action/delete/{JSON-DATA}
+> <br /><strong>Sample:</strong><br />
+> http://zoox.api.local/action/delete/[{"collection":"cidade","id":1}]
+
+<strong>PHP Sample URL Request:</strong>
+<pre>
+$data_json = json_encode([
+            "collection" => $target,
+            "id" => $id
+        ], JSON_UNESCAPED_UNICODE);
+
+        $this->url = "http://zoox.api.local/action/delete/{$data_json}";
+</pre>
+
+<strong>Response:</strong>
+<pre>
+{
+    "msgSuccess":"Documento apagado com sucesso"
+}
+
+{
+    "msgError":"Não foi possivel apagar o documento"
+}
+</pre>
 
 # Authentication
 The app authentication is make in the collection database zoox_mongodb_collection_auth, so you should be register your app in the collection database, example:
