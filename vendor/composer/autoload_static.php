@@ -11,9 +11,9 @@ class ComposerStaticInit3815e604630a9966a611650bca4cb3e9
     );
 
     public static $prefixLengthsPsr4 = array (
-        'S' => 
+        'Z' => 
         array (
-            'SlimPlayer\\' => 11,
+            'ZooxTest\\' => 9,
         ),
         'P' => 
         array (
@@ -30,9 +30,9 @@ class ComposerStaticInit3815e604630a9966a611650bca4cb3e9
     );
 
     public static $prefixDirsPsr4 = array (
-        'SlimPlayer\\' => 
+        'ZooxTest\\' => 
         array (
-            0 => __DIR__ . '/..' . '/app/src/SlimPlayer',
+            0 => __DIR__ . '/..' . '/app/src/ZooxTest',
         ),
         'PackageVersions\\' => 
         array (

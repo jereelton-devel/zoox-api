@@ -1,0 +1,217 @@
+[{
+  "_id": {
+    "$oid": "5f8712ce75460000f1006e98"
+  },
+  "id": 1,
+  "nome": "Taubate",
+  "sigla": "SP",
+  "data_criacao": "10/10/2020",
+  "data_atualizacao": "14/10/2020"
+},{
+  "_id": {
+    "$oid": "5f87133175460000f1006e99"
+  },
+  "id": 2,
+  "nome": "Sorocaba",
+  "sigla": "SP",
+  "data_criacao": "10/10/2020",
+  "data_atualizacao": "14/10/2020"
+},{
+  "_id": {
+    "$oid": "5f871afe75460000f1006e9a"
+  },
+  "id": 3,
+  "nome": "Rio de Janeiro",
+  "sigla": "RJ",
+  "data_criacao": "10/10/2020",
+  "data_atualizacao": "14/10/2020"
+},{
+  "_id": {
+    "$oid": "5f87be9d75460000f1006e9f"
+  },
+  "id": 4,
+  "nome": "Campo Grande",
+  "sigla": "MS",
+  "data_criacao": "15/10/2020",
+  "data_atualizacao": ""
+},{
+  "_id": {
+    "$oid": "5f87bf1475460000f1006ea0"
+  },
+  "id": 5,
+  "nome": "Ubatuba",
+  "sigla": "RJ",
+  "data_criacao": "15/10/2020",
+  "data_atualizacao": "15/10/2020"
+},{
+  "_id": {
+    "$oid": "5f87c5c775460000f1006ea2"
+  },
+  "id": 6,
+  "nome": "Santa Catarina",
+  "sigla": "PR",
+  "data_criacao": "15/10/2020",
+  "data_atualizacao": "15/10/2020"
+},{
+  "_id": {
+    "$oid": "5f88259e9e710000f4005614"
+  },
+  "id": 7,
+  "nome": "Alphaville",
+  "sigla": "SP",
+  "data_criacao": "15/10/2020",
+  "data_atualizacao": ""
+},{
+  "_id": {
+    "$oid": "5f88312e9e710000f4005619"
+  },
+  "id": 11,
+  "nome": "Caraguatatuba",
+  "sigla": "SP",
+  "data_criacao": "15/10/2020",
+  "data_atualizacao": "15/10/2020"
+},{
+  "_id": {
+    "$oid": "5f88335e9e710000f400561a"
+  },
+  "id": 10,
+  "nome": "CidadeNova",
+  "sigla": "RJ",
+  "data_criacao": "15/10/2020",
+  "data_atualizacao": "15/10/2020 09:00:56"
+},{
+  "_id": {
+    "$oid": "5f8839a29e710000f400561b"
+  },
+  "id": 10,
+  "nome": "TesteCidade1",
+  "sigla": "XX",
+  "data_criacao": "15/10/2020 08:59:30",
+  "data_atualizacao": ""
+},{
+  "_id": {
+    "$oid": "5f883b389e710000f400561c"
+  },
+  "id": 11,
+  "nome": "Testando",
+  "sigla": "JJ",
+  "data_criacao": "15/10/2020 09:06:16",
+  "data_atualizacao": ""
+},{
+  "_id": {
+    "$oid": "5f883b4b9e710000f400561d"
+  },
+  "id": 12,
+  "nome": "Testando",
+  "sigla": "JJ",
+  "data_criacao": "15/10/2020 09:06:35",
+  "data_atualizacao": ""
+},{
+  "_id": {
+    "$oid": "5f883b529e710000f400561e"
+  },
+  "id": 13,
+  "nome": "Testando",
+  "sigla": "JJ",
+  "data_criacao": "15/10/2020 09:06:42",
+  "data_atualizacao": ""
+},{
+  "_id": {
+    "$oid": "5f883b529e710000f400561f"
+  },
+  "id": 14,
+  "nome": "Testando",
+  "sigla": "JJ",
+  "data_criacao": "15/10/2020 09:06:42",
+  "data_atualizacao": ""
+},{
+  "_id": {
+    "$oid": "5f883b529e710000f4005620"
+  },
+  "id": 15,
+  "nome": "Testando",
+  "sigla": "JJ",
+  "data_criacao": "15/10/2020 09:06:42",
+  "data_atualizacao": ""
+},{
+  "_id": {
+    "$oid": "5f883b539e710000f4005621"
+  },
+  "id": 16,
+  "nome": "Testando",
+  "sigla": "JJ",
+  "data_criacao": "15/10/2020 09:06:43",
+  "data_atualizacao": ""
+},{
+  "_id": {
+    "$oid": "5f883b539e710000f4005622"
+  },
+  "id": 17,
+  "nome": "Testando",
+  "sigla": "JJ",
+  "data_criacao": "15/10/2020 09:06:43",
+  "data_atualizacao": ""
+},{
+  "_id": {
+    "$oid": "5f883b539e710000f4005624"
+  },
+  "id": 19,
+  "nome": "Testando",
+  "sigla": "JJ",
+  "data_criacao": "15/10/2020 09:06:43",
+  "data_atualizacao": ""
+},{
+  "_id": {
+    "$oid": "5f883b539e710000f4005626"
+  },
+  "id": 21,
+  "nome": "Testando",
+  "sigla": "JJ",
+  "data_criacao": "15/10/2020 09:06:43",
+  "data_atualizacao": ""
+},{
+  "_id": {
+    "$oid": "5f883b539e710000f4005627"
+  },
+  "id": 22,
+  "nome": "Testando",
+  "sigla": "JJ",
+  "data_criacao": "15/10/2020 09:06:43",
+  "data_atualizacao": ""
+},{
+  "_id": {
+    "$oid": "5f883b549e710000f400562b"
+  },
+  "id": 26,
+  "nome": "Testando",
+  "sigla": "JJ",
+  "data_criacao": "15/10/2020 09:06:44",
+  "data_atualizacao": ""
+},{
+  "_id": {
+    "$oid": "5f883c279e710000f400562c"
+  },
+  "id": 24,
+  "nome": "Novidade",
+  "sigla": "SP",
+  "data_criacao": "15/10/2020 09:10:15",
+  "data_atualizacao": ""
+},{
+  "_id": {
+    "$oid": "5f88442c9e710000f400562d"
+  },
+  "id": 27,
+  "nome": "NovoTeste111",
+  "sigla": "SP",
+  "data_criacao": "15/10/2020 09:44:28",
+  "data_atualizacao": ""
+},{
+  "_id": {
+    "$oid": "5f8854929e710000f4005637"
+  },
+  "id": 28,
+  "nome": "TesteLog",
+  "sigla": "LO",
+  "data_criacao": "15/10/2020 10:54:26",
+  "data_atualizacao": ""
+}]

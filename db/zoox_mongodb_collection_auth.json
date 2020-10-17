@@ -1,0 +1,13 @@
+[{
+  "_id": {
+    "$oid": "5f885c65b9712c0c445860b4"
+  },
+  "id": 1,
+  "app": "zoox.test.local"
+},{
+  "_id": {
+    "$oid": "5f885c96b9712c0c445860b5"
+  },
+  "id": 2,
+  "app": "zoox.api.local"
+}]

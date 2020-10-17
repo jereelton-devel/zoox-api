@@ -1,0 +1,17 @@
+[{
+  "_id": {
+    "$oid": "5f885d40b9712c0c445860b6"
+  },
+  "id": 1,
+  "app": "zoox.test.local",
+  "token": "MTIzNDU2Nzg5MA==",
+  "timelife": 1
+},{
+  "_id": {
+    "$oid": "5f885d4cb9712c0c445860b7"
+  },
+  "id": 2,
+  "app": "zoox.api.local",
+  "token": "MTIzNDU2Nzg5MA==",
+  "timelife": 1
+}]
