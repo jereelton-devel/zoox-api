@@ -7,6 +7,8 @@ use \ZooxTest\ZooxTestDataHandler;
 use \ZooxTest\ZooxTestLogger;
 use \ZooxTest\ZooxTestAuth;
 use \ZooxTest\ZooxTestApikey;
+use \ZooxTest\ZooxTestRequest;
+use \ZooxTest\ZooxTestResponse;
 
 $app = new Slim();
 
@@ -15,10 +17,14 @@ $checkAuthentication = function($app) {
     $auth = new ZooxTestAuth();
     if($auth->findAppAuth($app) == false) {
 
+        $datalog = [
+            "action"=>"Authentication",
+            "data"=>"Error $app Nao Autenticada"
+        ];
         $logger = new ZooxTestLogger();
-        $logger->dataLogInsert(json_encode(["action"=>"Authentication", "data"=>"Error $app Nao Autenticada"]));
+        $logger->dataLogCommon($datalog);
 
-        echo json_encode(["msgError"=>"Nao Autenticado"]);
+        echo ZooxTestResponse::setResponse(["msgError"=>"Nao Autenticado"], "application/json");
         die;
     }
 };
@@ -28,10 +34,14 @@ $checkAuthorization = function($app, $token) {
     $authorization = new ZooxTestApikey();
     if($authorization->findApiKey($app, $token) == false) {
 
+        $datalog = [
+            "action"=>"Authorization",
+            "data"=>"Error $app Nao Autorizada"
+        ];
         $logger = new ZooxTestLogger();
-        $logger->dataLogInsert(json_encode(["action"=>"Authorization", "data"=>"Error $app Nao Autorizada"]));
+        $logger->dataLogCommon($datalog);
 
-        echo json_encode(["msgError"=>"Nao Autorizado"]);
+        echo ZooxTestResponse::setResponse(["msgError"=>"Nao Autorizado"], "application/json");
         die;
     }
 };
@@ -49,7 +59,7 @@ $controllAccess = function() {
     $xApiKey = (isset($headers['x-Api-key']) && $headers['x-Api-key'] != "") ? $headers['x-Api-key'] : '';
 
     if($xApiKey == "" || ($hostApi == "" && $referer == "" && $origin == "" && $xClient == "")) {
-        echo "<h1>ZOOX-API-LOCAL::Acesso Restrito</h1>";
+        echo ZooxTestResponse::setResponse(["msgError"=>"ZOOX-API-LOCAL::Acesso Restrito"], "application/json");
         die;
     }
 
@@ -62,99 +72,153 @@ $controllAccess = function() {
     } elseif($hostApi != "") {
         $appAuth = $hostApi; $method = "Host";
     } else {
-        echo false;
+        echo ZooxTestResponse::setResponse(["msgError"=>"false"], "application/json");
         die;
     }
 
     $checkAuthentication($appAuth);
     $checkAuthorization($appAuth, $xApiKey);
 
+    $datalog = [
+        "action"=>"ControllAccess",
+        "client"=>"Header[$method]",
+        "data"=>"$appAuth Autenticada e Autorizada"
+    ];
     $logger = new ZooxTestLogger();
-    $logger->dataLogInsert(json_encode(["action"=>"ControllAccess", "client"=>"Header[$method]", "data"=>"$appAuth Autenticada e Autorizada"]));
+    $logger->dataLogCommon($datalog);
 
 };
 
-$app->get('/action/search/:col/:data', $controllAccess, function($col, $data) {
+$app->get('/action/list/:datainput', $controllAccess, function($datainput) {
 
-    $search = new ZooxTestDataHandler($col);
-    $response = $search->dataSearch($data);
+    $getDataInput = ZooxTestRequest::getJsonRequest($datainput);
 
-    $logger = new ZooxTestLogger();
-    $logger->dataLogInsert(json_encode(["action"=>"Search", "data"=>"$response"]));
+    if(isset($getDataInput['msgError']) && $getDataInput['msgError'] != "") {
+        echo ZooxTestResponse::setResponse($getDataInput, "application/json");
+        exit;
+    }
 
-    echo $response;
-
-});
-
-$app->get('/action/list/:col', $controllAccess, function($col) {
-
-    $search = new ZooxTestDataHandler($col);
+    $search = new ZooxTestDataHandler($getDataInput['collection']);
     $response = $search->dataList();
 
     $logger = new ZooxTestLogger();
-    $logger->dataLogInsert(json_encode(["action"=>"List", "data"=>"$response"]));
+    $logger->dataLogInsert("list", $getDataInput, $response);
 
-    echo $response;
-
-});
-
-$app->get('/action/listone/:col/:data', $controllAccess, function($col, $data) {
-
-    $search = new ZooxTestDataHandler($col);
-    $response = $search->dataListOne($data);
-
-    $logger = new ZooxTestLogger();
-    $logger->dataLogInsert(json_encode(["action"=>"ListOne", "data"=>"$response"]));
-
-    echo $response;
+    echo ZooxTestResponse::setResponse($response, "application/json");
 
 });
 
-$app->get('/action/listorder/:col/:data/:type', $controllAccess, function($col, $data, $type) {
+$app->get('/action/listone/:datainput', $controllAccess, function($datainput) {
 
-    $search = new ZooxTestDataHandler($col);
-    $response = $search->dataListOrder($data, $type);
+    $getDataInput = ZooxTestRequest::getJsonRequest($datainput);
+
+    if(isset($getDataInput['msgError']) && $getDataInput['msgError'] != "") {
+        echo ZooxTestResponse::setResponse($getDataInput, "application/json");
+        exit;
+    }
+
+    $search = new ZooxTestDataHandler($getDataInput['collection']);
+    $response = $search->dataListOne($getDataInput['id']);
 
     $logger = new ZooxTestLogger();
-    $logger->dataLogInsert(json_encode(["action"=>"ListOrder", "data"=>"$response"]));
+    $logger->dataLogInsert("listone", $getDataInput, $response);
 
-    echo $response;
+    echo ZooxTestResponse::setResponse($response, "application/json");
 
 });
 
-$app->post('/action/insert/:col/:data1/:data2', $controllAccess, function($col, $data1, $data2) {
+$app->get('/action/listorder/:datainput', $controllAccess, function($datainput) {
 
-    $search = new ZooxTestDataHandler($col);
-    $response = $search->dataInsert($data1, $data2);
+    $getDataInput = ZooxTestRequest::getJsonRequest($datainput);
+
+    if(isset($getDataInput['msgError']) && $getDataInput['msgError'] != "") {
+        echo ZooxTestResponse::setResponse($getDataInput, "application/json");
+        exit;
+    }
+
+    $search = new ZooxTestDataHandler($getDataInput['collection']);
+    $response = $search->dataListOrder($getDataInput['order'], $getDataInput['type']);
 
     $logger = new ZooxTestLogger();
-    $logger->dataLogInsert(json_encode(["action"=>"Insert", "data"=>"$response"]));
+    $logger->dataLogInsert("listorder", $getDataInput, $response);
 
-    echo $response;
+    echo ZooxTestResponse::setResponse($response, "application/json");
 
 });
 
-$app->post('/action/update/:col/:data/:data1/:data2', $controllAccess, function($col, $data, $data1, $data2) {
+$app->get('/action/search/:datainput', $controllAccess, function($datainput) {
 
-    $search = new ZooxTestDataHandler($col);
-    $response = $search->dataUpdate($data, $data1, $data2);
+    $getDataInput = ZooxTestRequest::getJsonRequest($datainput);
+
+    if(isset($getDataInput['msgError']) && $getDataInput['msgError'] != "") {
+        echo ZooxTestResponse::setResponse($getDataInput, "application/json");
+        exit;
+    }
+
+    $search = new ZooxTestDataHandler($getDataInput['collection']);
+    $response = $search->dataSearch($getDataInput['data']);
 
     $logger = new ZooxTestLogger();
-    $logger->dataLogInsert(json_encode(["action"=>"Update", "data"=>"$response"]));
+    $logger->dataLogInsert("search", $getDataInput, $response);
 
-    echo $response;
+    echo ZooxTestResponse::setResponse($response, "application/json");
 
 });
 
-$app->post('/action/delete/:col/:data', $controllAccess, function($col, $data) {
+$app->post('/action/insert/:datainput', $controllAccess, function($datainput) {
 
-    $search = new ZooxTestDataHandler($col);
-    $response = $search->dataDelete($data);
+    $getDataInput = ZooxTestRequest::getJsonRequest($datainput);
+
+    if(isset($getDataInput['msgError']) && $getDataInput['msgError'] != "") {
+        echo ZooxTestResponse::setResponse($getDataInput, "application/json");
+        exit;
+    }
+
+    $search = new ZooxTestDataHandler($getDataInput['collection']);
+    $response = $search->dataInsert($getDataInput['name'], $getDataInput['sigla']);
 
     $logger = new ZooxTestLogger();
-    $logger->dataLogInsert(json_encode(["action"=>"Remove", "data"=>"$response"]));
+    $logger->dataLogInsert("insert", $getDataInput, $response);
 
-    echo $response;
+    echo ZooxTestResponse::setResponse($response, "application/json");
+
+});
+
+$app->post('/action/update/:datainput', $controllAccess, function($datainput) {
+
+    $getDataInput = ZooxTestRequest::getJsonRequest($datainput);
+
+    if(isset($getDataInput['msgError']) && $getDataInput['msgError'] != "") {
+        echo ZooxTestResponse::setResponse($getDataInput, "application/json");
+        exit;
+    }
+
+    $search = new ZooxTestDataHandler($getDataInput['collection']);
+    $response = $search->dataUpdate($getDataInput['id'], $getDataInput['name'], $getDataInput['sigla']);
+
+    $logger = new ZooxTestLogger();
+    $logger->dataLogInsert("update", $getDataInput, $response);
+
+    echo ZooxTestResponse::setResponse($response, "application/json");
+
+});
+
+$app->post('/action/delete/:datainput', $controllAccess, function($datainput) {
+
+    $getDataInput = ZooxTestRequest::getJsonRequest($datainput);
+
+    if(isset($getDataInput['msgError']) && $getDataInput['msgError'] != "") {
+        echo ZooxTestResponse::setResponse($getDataInput, "application/json");
+        exit;
+    }
+
+    $search = new ZooxTestDataHandler($getDataInput['collection']);
+    $response = $search->dataDelete($getDataInput['id']);
+
+    $logger = new ZooxTestLogger();
+    $logger->dataLogInsert("delete", $getDataInput, $response);
+
+    echo ZooxTestResponse::setResponse($response, "application/json");
 
 });
 

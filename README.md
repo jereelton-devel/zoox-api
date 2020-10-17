@@ -13,7 +13,8 @@
 
 > NOTE: Use URL-Encode to send a request for api zoox-api: urlencode (PHP)
 
-> NOTE: This project is part of the zoox project and must be used together with the <h1>zoox-test</h1>. 
+> NOTE: This project is part of the zoox project and must be used together with the <h1>zoox-test</h1>
+> https://github.com/jereelton-devel/zoox-test/tree/devel 
 
 # Configure Apache Server - XAMPP
 C:\webserver\xampp-php7.4.8\apache\conf\extra\httpd-vhosts.conf

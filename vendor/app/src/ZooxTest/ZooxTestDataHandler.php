@@ -35,11 +35,11 @@ class ZooxTestDataHandler
 
         if($zooxdelete->getDeletedCount()) {
 
-            return json_encode(['msgSuccess' => 'Documento apagado com sucesso']);
+            return ['msgSuccess' => 'Documento apagado com sucesso'];
 
         } else {
 
-            return json_encode(['msgError' => 'Não foi possivel apagar o documento'], JSON_UNESCAPED_UNICODE);
+            return ['msgError' => 'Não foi possivel apagar o documento'];
 
         }
     }
@@ -47,6 +47,14 @@ class ZooxTestDataHandler
     public function dataUpdate($data, $data1, $data2)
     {
         $data2 = strtoupper($data2);
+
+        if(strlen($data1) <= 3 || is_numeric($data1)) {
+            return ['msgError' => 'Nome Inválido'];
+        }
+
+        if(strlen($data2) != 2 || is_numeric($data2)) {
+            return ['msgError' => 'Sigla Inválida'];
+        }
 
         $zooxupdate = $this->cursor->updateOne(
                 ["id"=>intval($data)],
@@ -60,11 +68,11 @@ class ZooxTestDataHandler
 
         if($zooxupdate->getModifiedCount() > 0 || $zooxupdate->getMatchedCount()) {
 
-            return json_encode(['msgSuccess' => 'Documento atualizado com sucesso']);
+            return ['msgSuccess' => 'Documento atualizado com sucesso'];
 
         } else {
 
-            return json_encode(['msgError' => 'Não foi possivel atualizar o documento'], JSON_UNESCAPED_UNICODE);
+            return ['msgError' => 'Não foi possivel atualizar o documento'];
 
         }
     }
@@ -73,12 +81,12 @@ class ZooxTestDataHandler
     {
         $data2 = strtoupper($data2);
 
-        if(strlen($data1) <= 3) {
-            return json_encode(['msgError' => 'Nome Inválido'], JSON_UNESCAPED_UNICODE);
+        if(strlen($data1) <= 3 || is_numeric($data1)) {
+            return ['msgError' => 'Nome Inválido'];
         }
 
-        if(strlen($data2) != 2) {
-            return json_encode(['msgError' => 'Sigla Inválida'], JSON_UNESCAPED_UNICODE);
+        if(strlen($data2) != 2 || is_numeric($data2)) {
+            return ['msgError' => 'Sigla Inválida'];
         }
 
         $zooxinsert = $this->cursor->insertOne(
@@ -92,11 +100,11 @@ class ZooxTestDataHandler
 
         if($zooxinsert->getInsertedCount() > 0) {
 
-            return json_encode(['msgSuccess' => 'Documento inserido com sucesso']);
+            return ['msgSuccess' => 'Documento inserido com sucesso'];
 
         } else {
 
-            return json_encode(['msgError' => 'Não foi possivel inserir o documento'], JSON_UNESCAPED_UNICODE);
+            return ['msgError' => 'Não foi possivel inserir o documento'];
 
         }
     }
@@ -126,11 +134,11 @@ class ZooxTestDataHandler
 
         if(count($this->arrayDocs) > 0) {
 
-            return json_encode($this->arrayDocs);
+            return $this->arrayDocs;
 
         } else {
 
-            return json_encode(['msgError' => 'Não foi possivel ordenar a lista'], JSON_UNESCAPED_UNICODE);
+            return ['msgError' => 'Não foi possivel ordenar a lista'];
 
         }
     }
@@ -151,11 +159,11 @@ class ZooxTestDataHandler
                 "data_atualizacao" => $zooxlist["data_atualizacao"]
             ];
 
-            return json_encode($this->arrayDocs);
+            return $this->arrayDocs;
 
         } else {
 
-            return json_encode(['msgError' => 'Registro não encontrado'], JSON_UNESCAPED_UNICODE);
+            return ['msgError' => 'Registro não encontrado'];
         }
     }
 
@@ -179,11 +187,11 @@ class ZooxTestDataHandler
 
             }
 
-            return json_encode($this->arrayDocs);
+            return $this->arrayDocs;
 
         } else {
 
-            return json_encode(['msgError' => 'Nenhum registro encontrado']);
+            return ['msgError' => 'Nenhum registro encontrado'];
 
         }
     }
@@ -222,11 +230,11 @@ class ZooxTestDataHandler
 
         if(isset($this->arrayDocs) && count($this->arrayDocs) > 0) {
 
-            return json_encode($this->arrayDocs);
+            return $this->arrayDocs;
 
         } else {
 
-            return json_encode(['msgError' => 'Busca não encontrada'], JSON_UNESCAPED_UNICODE);
+            return ['msgError' => 'Busca não encontrada'];
 
         }
     }
