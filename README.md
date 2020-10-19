@@ -3,13 +3,14 @@
 <h2>How do use and test this app</h2>
 
 <h3>Requirements</h3>
-- PHP 7.4
-- XAMPP v3.2.4
-- MongoDB 4.4.1
-- Compass 1.22.1
-- Composer dependencies
-- JSON Encodding for Requests
-- Application Register in the database
+
+- PHP 7.4<br />
+- XAMPP v3.2.4<br />
+- MongoDB 4.4.1<br />
+- Compass 1.22.1<br />
+- Composer dependencies<br />
+- JSON Encodding for Requests<br />
+- Application Register in the database<br />
 
 > NOTE: This project and app was tested in Windows environment
 
