@@ -1,8 +1,8 @@
-# zoox-challege
+<h1>zoox-challege</h1>
 
-# How do use and test this api
+<h2>How do use and test this app</h2>
 
-# Requirements
+<h3>Requirements</h3>
 - PHP 7.4
 - XAMPP v3.2.4
 - MongoDB 4.4.1
@@ -11,15 +11,16 @@
 - JSON Encodding for Requests
 - Application Register in the database
 
-> NOTE: This project and app was tested on Windows environment
+> NOTE: This project and app was tested in Windows environment
 
-> NOTE: Use URL-Encode to send a request for api zoox-api: urlencode (PHP)
+> NOTE: Use URL-Encode or JSON-Encode to send a request for api zoox-api: urlencode (PHP)
 
 > NOTE: This project is part of the zoox project and must be used together with the <h1>zoox-test</h1>
 > https://github.com/jereelton-devel/zoox-test/tree/master 
 
-# Configure Apache Server - XAMPP
-C:\webserver\xampp-php7.4.8\apache\conf\extra\httpd-vhosts.conf
+<h3>Apache Server Configuration - XAMPP</h3>
+
+<p>C:\webserver\xampp-php7.4.8\apache\conf\extra\httpd-vhosts.conf</p>
 
 - API
 <pre>
@@ -90,9 +91,9 @@ C:\webserver\xampp-php7.4.8\apache\conf\extra\httpd-vhosts.conf
 </VirtualHost>
 </pre>
 
-# Configure hosts file
+<h3>Hosts File Configuration</h3>
 
-C:\Windows\System32\drivers\etc\hosts
+<p>C:\Windows\System32\drivers\etc\hosts</p>
 
 <pre>
 # Copyright (c) 1993-2009 Microsoft Corp.
@@ -122,24 +123,29 @@ C:\Windows\System32\drivers\etc\hosts
 	127.0.0.1       zoox.denied.local
 </pre>
 
-# Restart your webserver
+<h3>Restart your webserver</h3>
+
 - XAMPP::Controll (by example)
 
-# Import the MongoDB databases that are placed on zoox-api/db in this project
+<h3>Import the MongoDB databases</h3>
+
+<p>These files are placed in zoox-api project in the db/ folder</p>
+
 - zoox_mongodb_collection_apikey.json
 - zoox_mongodb_collection_auth.json
 - zoox_mongodb_collection_cidade.json
 - zoox_mongodb_collection_estado.json
 - zoox_mongodb_collection_log.json
 
-# IMPORTANT:
->Put the files files zoox-test on your localhost root path, so access the app by http://zoox.test.local.
+<h3>IMPORTANT:</h3>
 
->The API should be defined with the correct local dns name for the correct funcionally this test, by example: http://zoox.api.local
+> Put the files files zoox-test on your localhost root path, so access the app by http://zoox.test.local/.
+
+> The API should be defined with the correct local dns name for the correct funcionally this test, by example: http://zoox.api.local
 
 > You can too put the files in the localhost (http://localhost/zoox-test) webserver, but will be needed register the application into database correctly.
 
-# Requests
+<h3>Requests</h3>
 
 > NOTE !<br />
 (:col) = collection and (:data) = data
@@ -166,14 +172,14 @@ $data_json = json_encode([
       "id":1,
       "nome":"Amazonas",
       "sigla":"AM",
-      "data_criacao":"10\/10\/2020",
+      "data_criacao":"10\/10\/2020 13:29:34",
       "data_atualizacao":"16\/10\/2020 11:42:23"
    },
    {
       "id":2,
       "nome":"São Paulo",
       "sigla":"SP",
-      "data_criacao":"10\/10\/2020",
+      "data_criacao":"10\/10\/2020 13:29:34",
       "data_atualizacao":"16\/10\/2020 11:15:23"
    }
 ]
@@ -202,7 +208,7 @@ $data_json = json_encode([
       "id":1,
       "nome":"Amazonas",
       "sigla":"AM",
-      "data_criacao":"10\/10\/2020",
+      "data_criacao":"10\/10\/2020 13:29:34",
       "data_atualizacao":"16\/10\/2020 11:42:23"
    }
 ]
@@ -239,7 +245,7 @@ $data_json = json_encode([
       "id":1,
       "nome":"Amazonas",
       "sigla":"AM",
-      "data_criacao":"10\/10\/2020",
+      "data_criacao":"10\/10\/2020 13:29:34",
       "data_atualizacao":"16\/10\/2020 11:42:23"
    }
 ]
@@ -306,7 +312,7 @@ $data_json = json_encode([
 > <strong>POST</strong><br />
 > zoox.api.local/action/update/{JSON-DATA}
 > <br /><strong>Sample:</strong><br />
-> http://zoox.api.local/action/update/[{"collection":"cidade","id":1,"":"Santos",sigla":"SP"}]
+> http://zoox.api.local/action/update/[{"collection":"cidade","id":1,"name":"Santos",sigla":"SP"}]
 
 <strong>PHP Sample URL Request:</strong>
 <pre>
@@ -358,17 +364,21 @@ $data_json = json_encode([
 }
 </pre>
 
-# Authentication
+<h3>Authentication</h3>
+
 The app authentication is make in the collection database zoox_mongodb_collection_auth, so you should be register your app in the collection database, example:
+
 * {id: 1, app: zoox.test.local}
 * {id: 2, app: zoox.api.local}
 
-# Authorization
-After app authentication the api request your token to check your identiry correctly in the collection zoox_mongodb_collection_apikey, so you need register or create a token of access this api, example:
+<h3>Authorization</h3>
+
+After app authentication the api request your token to check your identity correctly in the collection zoox_mongodb_collection_apikey, so you need register or create a token of access this api, example:
+
 * {id: 1, app: "zoox.test.local", token: "MTIzNDU2Nzg5MA==", timelife: 1}
 * {id: 2, app: "zoox.test.local", token: "MTIzNDU2Nzg5MA==", timelife: 1}
 
-On both cases you should be send the token in the request header with name <strong>x-Api-key</strong> and client name <strong>x-Client-Origin</strong>.
+In both cases you should be send the token in the request header with name <strong>x-Api-key</strong> and client name <strong>x-Client-Origin</strong>.
 
 > PHP Sample
 <pre>
@@ -377,3 +387,23 @@ $this->headers = [
             "x-Api-key: {$this->token}",
         ];
 </pre>
+
+> Jquery Ajax Sample
+<pre>
+    $.ajax({
+        contentType: 'application/json; charset=UTF-8'
+        headers: {
+            'x-Client-Origin':'zoox.test.local',
+            'x-Api-key':'MTIzNDU2Nzg5MA=='
+        }
+        type: "GET|POST...",
+        url: "http://zoox.api.local/[ACTION]",
+        data: "action=[ACTION]",
+        dataType: "json",
+        async: false,
+        success: function(resp) { /*any thing*/ },
+        error: function(resp) { /*any thing*/ }
+    });
+</pre>
+
+
